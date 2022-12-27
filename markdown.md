@@ -65,14 +65,14 @@
 ## 링크
 ```md
 [구글](https://google.com)  
-![이미지](image.png)
-[a 파일](a.md)
+[a 파일](a.txt)
 [b 폴더](b/)
+![이미지](./image/image1.png) 
 ```
 [구글](https://google.com/)  
-![이미지](image.png)  
-[a 파일](a.md)  
-[b 폴더](b/)
+[a 파일](a.txt)  
+[b 폴더](b/)  
+![이미지](./image/image1.png)  
 
 ---
 
@@ -111,8 +111,7 @@ print('Hello, World')
 ---
 ---
 
-## 개발자에게 문서 작성이란..?
+### 개발자에게 문서 작성이란..?
 
 - 자신이 경험한 사용법을 문서화해서 팀 내에 전파
-
 - 기술 문서 작성 및 관리 업무
