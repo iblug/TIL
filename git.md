@@ -67,7 +67,7 @@
 
 ## 상태(Status)
 
-![status](./image/status.png)
+![status](./image/status.png)[git status 출력 화면]
 
 * `1.txt` 는 새로운 파일. (Untracked)
 * `2.txt` 는 새로운 파일을 staging area에 add. (new file)
