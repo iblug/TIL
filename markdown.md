@@ -1,4 +1,4 @@
-# 마크다운
+# 마크다운(Markdown)
 
 ## 개요
 
@@ -17,11 +17,11 @@
 ---
 ---
 
-# 마크다운 문법 정리
+# 마크다운 문법
 
 수업내용과 [여기](https://www.markdownguide.org/cheat-sheet/)를 참고하여 작성하였습니다.
 
-더 많은 내용은 [여기](https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4%3A%EB%AC%B8%EB%B2%95%20%EB%8F%84%EC%9B%80%EB%A7%90)를 확인.
+더 많은 내용은 [나무위키](https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4%3A%EB%AC%B8%EB%B2%95%20%EB%8F%84%EC%9B%80%EB%A7%90)를 확인.
 
 ---
 
