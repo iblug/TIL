@@ -16,28 +16,25 @@
 
 ---
 ---
+## 마크다운 문법
 
-# 마크다운 문법
+* ## 텍스트 강조
 
-수업내용과 [여기](https://www.markdownguide.org/cheat-sheet/)를 참고하여 작성하였습니다.
-
-더 많은 내용은 [나무위키](https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4%3A%EB%AC%B8%EB%B2%95%20%EB%8F%84%EC%9B%80%EB%A7%90)를 확인.
-
----
-
-## 텍스트 강조
-
-*기울리기* \*기울리기\*  
-**강조** \*\*강조\*\*  
-`code` \`code\`  
-~~취소선~~ \~~취소선\~~
+| 출력 |  | 입력 |
+|---|---|---|
+| *기울리기* |  | \*기울리기\* |
+| **강조** |  | \*\*강조\*\* |
+| `code` |  | \`code\` |
+| ~~취소~~ |  | \~~취소\~~ |
 >인용구 > 인용구
 
 ---
 
-## 리스트
+- ## 리스트
 
 ```md
+# md
+
 1. First item
   - item
   - item
@@ -62,8 +59,10 @@
 * item
 ---
 
-## 링크
+* ## 링크
 ```md
+# md
+
 [구글](https://google.com)  
 [a 파일](a.txt)
 [b 폴더](b/)
@@ -76,11 +75,13 @@
 
 ---
 
-## 테이블
+* ## 테이블
 
 > [테이블 쉽게 만들기](https://www.tablesgenerator.com/markdown_tables)
 
 ```md
+# md
+
 | wow | 1  | 2  | 3   | 4   |
 |-----|----|----|-----|-----|
 | a   | a1 | a2 | a3  | a4  |
@@ -96,17 +97,30 @@
 
 ---
 
-## 코드블럭
+* ## 코드블럭
+
+```md
+# md
+
+```python  
+print('Hello, World')  
+# 주석입니다.  
+\``` 
+```
 
 ```python
 print('Hello, World')
 # 주석입니다.
 ```
 
-\```python  
-print('Hello, World')  
-\# 주석입니다.  
-\```
+
+
+
+---
+
+수업내용과 [여기](https://www.markdownguide.org/cheat-sheet/)를 참고하여 작성하였습니다.
+
+더 많은 내용은 [나무위키](https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4%3A%EB%AC%B8%EB%B2%95%20%EB%8F%84%EC%9B%80%EB%A7%90)를 확인.
 
 ---
 ---
