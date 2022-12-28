@@ -15,16 +15,20 @@
     * Github에서 설정한 username으로 설정
   * git config --global user.email "my@email.com"
     * Github에서 설정한 email로 설정
+
 - 설정 확인
   * git config -l
   * git config --global -l
   * git config user.name
+
 * --system
   * /etc/gitconfig
   * 시스템의 모든 사용자와 모든 저장소에 적용(관리자 권한)
+
 - --global
   * ~/.gitconfig
   * 현재 사용자에게 적용되는 설정
+
 * --local
   * .git/config
   * 특정 저장소에만 적용되는 설정
@@ -47,10 +51,12 @@
   * $ git add .
   * $ git add -all
   * $ git add '\<filename\>'
+
 - git commit
   * staged 상태의 파일들을 커밋을 통해 버전으로 기록.
   * 커밋 메시지는 변경 사항을 나타낼 수 있도록 명확하게 작성하면 좋음.
   * $ git commit -m '<커밋메시지>'
+
 * git status
   * Git 저장소에 있는 파일의 상태를 확인하기 위하여 활용
   * Tracked : 이전부터 버전으로 관리되고 있는 파일
@@ -58,6 +64,7 @@
     * Modified : Changes not staged for commit
     * Staged : Changes to be committed
   * Untracked : 버전으로 관리된 적 없는파일(새로운 파일)
+
 - git log
   * 현재 저장소에 기록된 커밋을 조회
   * $ git log -2 --oneline
@@ -86,6 +93,7 @@
   * git add 하면 staging area 에 staged.
 - `6.txt` , `7.txt`
   - working directory 와 staging area 두 위치에 존재.
+  - add 후에 다시 수정한 것.
 * `1.txt`
   * 버전으로 관리된 적 없는파일(새로운 파일)
 
