@@ -180,8 +180,8 @@ print('Hello, World')
 
 ### 개발자에게 문서 작성이란..?
 
-- 자신이 경험한 사용법을 문서화해서 팀 내에 전파 할 수있어야 한다.[label](https://d2.naver.com/news/3435170)
-- '테크니컬 라이팅(Technical Writing)'[label](https://developers.google.com/tech-writing)
-- 기술 문서 작성 및 관리 업무 [label](https://engineering.linecorp.com/ko/blog/write-the-docs-prague-2018-recap/)
+- 자신이 경험한 사용법을 문서화해서 팀 내에 전파 할 수있어야 한다.[링크](https://d2.naver.com/news/3435170)
+- '테크니컬 라이팅(Technical Writing)'[링크](https://developers.google.com/tech-writing)
+- 기술 문서 작성 및 관리 업무 [링크](https://engineering.linecorp.com/ko/blog/write-the-docs-prague-2018-recap/)
 
 > ## 🏠 [go to README](../README.md)
