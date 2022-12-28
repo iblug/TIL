@@ -40,7 +40,7 @@ $ git clone <url>
 
 ## push 실패
 - 협업을 하다보면 아래의 오류 메시지를 확인하게됨
-![push_conflict](image\push_conflict.png)
+![push_conflict](image/push_conflict.png)
 * 로컬 저장소와 원격저장소의 커밋 이력이 다른 경우 push할 때 오류 발생
 * 해결 방법
  1. 원격 저장소의 커밋을 로컬 저장소로 가져옴(pull)
@@ -65,4 +65,4 @@ $ git clone <url>
 - 개발 환경
     - 운영체제 (windows, mac, linux)
     - 텍스트 에디터 / IDE (visual studio code 등)
-- [gitignore.io](https://gitignore.io) - .gitignore 파일 만든는 사이트
+- [gitignore.io](https://gitignore.io) - .gitignore 파일 만든는 사이트 
