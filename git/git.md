@@ -1,4 +1,9 @@
-# Git/Git Hub
+# Git/GitHub
+## 목차
+ 0. [개요](#개요)
+ 1. [환경 설정](#환경-설정)
+ 2. [명령어](#명령어)
+ 3. [상태(Status)](#상태status)
 ## 개요
 * Git은 분산버전관리스스템으로 코드의 버전을 관리하는 도구  
 * 2005년 리눅스 커널을 위한 도구로 리누스 토르발스가 개발  
@@ -7,6 +12,8 @@
 > **1. 작업을 하고 >**  
 > **2. 변경된 파일을 모아(add) >**  
 > **3. 버전으로 남긴다.(commmit)**  
+
+[top](#gitgithub)
 
 ---
 ## 환경 설정
@@ -32,6 +39,8 @@
 * --local
   * .git/config
   * 특정 저장소에만 적용되는 설정
+
+[top](#gitgithub)
 
 ---
 
@@ -70,11 +79,13 @@
   * $ git log -2 --oneline
     * 최근 2개의 커밋을 한줄로 보여줌
 
+[top](#gitgithub)
+
 ---
 
 ## 상태(Status)
 
-![status](./image/status.png)[git status 출력 화면]
+![status](../image/status.png)[git status 출력 화면]
 
 * `1.txt` 는 새로운 파일. (Untracked)
 * `2.txt` 는 새로운 파일을 staging area에 add. (new file)
@@ -99,4 +110,6 @@
 
 더 자세한 내용은 [여기](https://search.naver.com/search.naver?sm%3Dtab_hty.top%26where%3Dnexearch%26query%3Dstaged%26oquery%3Dstaging%2Barea%26tqi%3DhIrFVdprvxZssMQ7HQsssssssa4-199023)참고.
 
-![lifecycle](./image/lifecycle.png)
+![lifecycle](../image/lifecycle.png)
+
+[top](#gitgithub)
