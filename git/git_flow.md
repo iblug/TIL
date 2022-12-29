@@ -1,7 +1,16 @@
 # Git Flow
-## Branch
-독립적인 작업흐름을 만들고 관리하기 위하여 사용한다.
 ![git_flow](../image/git_flow.png)
+> Git을 활용한 협업의 흐름
+
+# 목차
+1. [Branch](#1-branch)
+2. [merge](#2-merge)
+3. [GitHub flow 기본원칙](#3-github-flow-기본-원칙)
+4. [GitHub flow models](#4-github-flow-models)
+
+# 1. Branch
+**독립적인 작업흐름을 만들고 관리**하기 위하여 사용한다.
+
 
 * 브랜치 생성
   ```
@@ -28,7 +37,9 @@
   (master) $ git brach -d {branch name}
   ```
 
-## merge
+[🔝](#git-flow)
+
+# 2. merge
 
 * 각 branch에서 작업을 한 이후 이력을 합치기 위해 사용한다.
 ```
@@ -50,12 +61,16 @@
 
 - 병합 후 필요에 따라 barnch 삭제한다.
 
-# GitHub Flow 기본 원칙
-1. master branch는 반드시 배포 가능한 상태여야 한다.
-2. feature branch는 각 기능의 의도를 알 수 있도록 작성한다.
-3. Commit message는 매우 중요하며, 명확하게 작성한다.
+[🔝](#git-flow)
+
+# 3. GitHub Flow 기본 원칙
+1. master branch는 반드시 **배포 가능한 상태**여야 한다.
+2. feature branch는 **각 기능의 의도를 알 수 있도록 작성**한다.
+3. Commit message는 매우 중요하며, **명확하게** 작성한다.
 4. Pull Request를 통해 협업을 진행한다.
-5. 변경사항을 반영하고 싶다면, master branch에 병합한다.
+5. 변경사항을 반영하고 싶다면, **master** branch에 병합한다.
+
+# 4. GitHub flow models
 
 ## 1. Shared Repository Model
 
@@ -75,3 +90,6 @@
   4. branch는 삭제하고, master branch를 업데이트.
       * *단, master branch는 원본 저장소를 받아와야 하며 별도의 원격 저장소를 추가하여 진행할 수 있다.*
       * *혹은 GitHub에서 fetch upstream도 가능하다.
+
+[🔝](#git-flow)
+> ## [🏠HOME](../README.md)
