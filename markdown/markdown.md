@@ -170,9 +170,7 @@ print('Hello, World')
 
 ---
 
-수업내용과 [여기](https://www.markdownguide.org/cheat-sheet/), [여기](https://kimasill.tistory.com/entry/MarkDown-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EC%9E%91%EC%84%B1%EB%B2%95)를 참고하여 작성하였습니다.
-
-더 많은 내용은 [나무위키](https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4%3A%EB%AC%B8%EB%B2%95%20%EB%8F%84%EC%9B%80%EB%A7%90)를 확인.
+수업내용과 [여기](https://www.markdownguide.org/cheat-sheet/)를 참고하여 작성하였습니다.
 
 ---
 ---
