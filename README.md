@@ -7,6 +7,7 @@
 ## [git](/git/)
    * [git](/git/git.md)
    * [github](/git/github.md)
+   * [git flow](/git/git_flow.md)
 ## [markdown](/markdown/)
   * [markdown](markdown/markdown.md)
 
