@@ -2,14 +2,20 @@
 배우고 기록하고 익히자
 # 💻Road to Developer
 ## 목차
+* [E-Learning](#e-learning)
 * [git](#git)
 * [markdown](#markdown)
+
+## [E-Learning](/E-Learning/)
+* [비개발자를 위한 IT지식](/E-Learning/%EB%B9%84%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC%20%EC%9C%84%ED%95%9C%20IT%EC%A7%80%EC%8B%9D.md)
+
 ## [git](/git/)
-   * [git](/git/git.md)
-   * [github](/git/github.md)
-   * [git flow](/git/git_flow.md)
+* [git](/git/git.md)
+* [github](/git/github.md)
+* [git flow](/git/git_flow.md)
+
 ## [markdown](/markdown/)
-  * [markdown](markdown/markdown.md)
+* [markdown](markdown/markdown.md)
 
 [🔝](#📖today-i-learned)
 
