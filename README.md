@@ -21,6 +21,7 @@
 ## [Python](/Python/)
 * [Python 기초](/Python/Python_%EA%B8%B0%EC%B4%88.md)
 * [Python 02](/Python/Python_02.md)
+* [Python 03](/Python/Python_03.md)
 
 [🔝](#📖today-i-learned)
 

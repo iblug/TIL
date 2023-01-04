@@ -11,6 +11,7 @@ else:
 
 number_list = [1, 2, 3, 4, 5]
 # number_list = []
+
 b = 0
 for _ in number_list :
     b += 1
@@ -22,6 +23,7 @@ print(b)
 
 number_list = [1, 2, 3, 4, 5]
 # number_list = [-1, -2, -3, -4, -5]
+
 c = 0
 for i in number_list:
     c += i
@@ -33,6 +35,7 @@ print(c)
 
 number_list = [2, 4, 6]
 # number_list = [2, 3, 5, 7]
+
 d = 0
 dl = 0
 for i in number_list:
@@ -46,6 +49,7 @@ print(d/dl)
 
 number_list = [1, 2, 3, 4, 5]
 # number_list = [-1, -2, 3]
+
 e = 1
 for i in number_list:
     e *= i
