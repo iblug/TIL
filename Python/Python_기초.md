@@ -196,6 +196,7 @@ num >= 100 and num % 3 == 1
       * `''' '''`, `""" """`
       * 여러줄을 나눠 입력할 때 편리
     * 인덱싱
+      ![indexing](../image/indexing.png)
       * 인덱스를 통해 특정 값에 접근할 수 있음
       ```py
       s = 'abcdefg'
@@ -204,24 +205,24 @@ num >= 100 and num % 3 == 1
       print(s[2:5:2]) # ce # 스텝(step)
       ```
     * 결합(Concatenation)
-    ```py
-    'hello, ' + 'python!'
-    # 'hello, python!'
-    ```
+      ```py
+      'hello, ' + 'python!'
+      # 'hello, python!'
+      ```
     * 반복(Repetition)
-    ```py
-    'hi' * 3
-    # hihihi
-    ```
+      ```py
+      'hi' * 3
+      # hihihi
+      ```
     * 포함(Membership)
-    ```py
-    'a' in 'apple'
-    # True
-    'app' in 'apple'
-    # True
-    'b' in 'apple'
-    # False
-    ```
+      ```py
+      'a' in 'apple'
+      # True
+      'app' in 'apple'
+      # True
+      'b' in 'apple'
+      # False
+      ```
     * 이스케이프(Escape sequence)
       * 문자열 내에서 특정 문자나 조작을 위해서 역슬래시( \\ )를 활용하여 구분
         | 예약문자 | 내용(의미) |
