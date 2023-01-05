@@ -43,6 +43,8 @@
   * max(iterable) / min(iterable)
     * 가장 큰 값 / 가장 작은 값 을 반환
     * 중복이면 처음 만남 항목을 반환
+  * enumerate(iterable, start=0)
+    * 인덱스와 값을 튜플로 반환(index, value)
 * 수학 관련 함수
   * abs(x)
     * 절댓값을 반환
