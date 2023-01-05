@@ -22,7 +22,7 @@ print(count2)
 
 ##############################################
 
-# 문제 3 딕셔너리 출력
+# 문제 3 딕셔너리 출력 - 따옴표 중첩 주의!!
 
 dict_variable = {
     '이름': '정우영',
@@ -31,8 +31,7 @@ dict_variable = {
 }
 
 ##
-age = 2023 - int(dict_variable['생년'])
-print(f'나이 : {age}')
+print(f'나이 : {2023 - int(dict_variable["생년"])}세')
 
 ##############################################
 
@@ -66,8 +65,7 @@ data = {}
 c = input('문자열을 입력하세요 > ')
 for i in c:
     if i not in data:
-        data[i] = 1
-    else:
-        data[i] += 1
+        data[i] = 0
+    data[i] += 1
 for k, v in data.items():
     print(k, v)

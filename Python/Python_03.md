@@ -26,7 +26,7 @@
 ## 사용자 함수(Custom Function)
 * 구현되어 있는 함수가 없는 경우, **사용자가 직접 함수를 작성 가능**
   ```py
-  def funcion_name
+  def funcion_name()
       # code block
       return returning_value
   ```
@@ -56,6 +56,7 @@
       ```
   * pow(base, exp, mod=None)
     * base의 exp 거급제곱을 반환
+    * `base \*\* exp`로 사용 가능
   * round(number, ndigit=None)
     * ndigit정밀도로 반올림한 값을 반환
     ```py
@@ -79,7 +80,7 @@
   * chr(i)
     * 유니코드 숫자가 정수 i에 대응되는 문자를 반환
   ```py
-  f = 3
+  f = 31
   print(bin(f), oct(f), hex(f))
   # 0b11111 0o37 0x1f
   print(ord('D')) # 68
