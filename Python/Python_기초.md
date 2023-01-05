@@ -309,9 +309,53 @@ num >= 100 and num % 3 == 1
     ```
   * ~~튜플(변경 불가능한 값들의 나열)~~
   * ~~레인지(숫자의 나열) - immutable~~
-* 컬렉션/비시퀀스
+* 컬렉션(Collection)/비시퀀스
   * ~~세트(유일한 값들의 모음) - mutable~~
-  * ~~딕셔너리(키-값들의 모음) - mutable~~
+  * 딕셔너리(Dictionary)
+    * **키-값(key-value)**쌍으로 이뤄진 **모음**(collection)
+      * Key - 불변 자료형만 가능(리스트, 딕셔너리 등은 불가능함)
+      * value - 어떠한 형태든 관계 없음
+    * 생성은 `{}`, 키와 값은 `:`로 구분, 개별 요소는 `,`로 구분
+      ```py
+      movie = {
+        'title': '설국열차'
+        'genres': ['SF', '액션', '드라마'], 
+        'open_date': '2013-08-01',
+        'time': 126,
+        'adult': False, 
+      }
+
+      movie['genres']
+      # ['SF', '액션', '드라마']
+      movie['genres'][1]
+      # '액션'
+      ```
+    * 키-값 **추가 및 변경** 가능
+    * 키-값 **삭제**
+      * .pop()을 활용하여 삭제하고자 하는 키를 전달
+      * 해당 키가 없는 경우는 KetError 발생
+      ```py
+      students = {'홍길동': 30, '김철수': 25}
+      students.pop('홍길동')
+      students
+      # {'김철수': 25}
+      students.pop('홍길동')
+      # KeyError!!!!!!
+      ```
+
+    * 딕셔너리 순회
+      ```py
+      grades = {'john': 80, 'eric': 90}
+      print(grades.keys()) # dict_keys(['john', 'eric'])
+      print(grades.values()) # dict_values([80, 90])
+      print(grades.items()) # dict_items([('john', 80), ('eric', 90)])
+
+      for name, score in grades.items():
+        print(name, score)
+      # john 80
+      # eric 90
+      ```
+     
 * None
   * 파이썬 자료형 중 하나
   * 파이썬에서는 값이 없음을 표현하기 위해 None 타입이 존재함.
