@@ -23,6 +23,7 @@
 * [Python 02](/Python/Python_02.md)
 * [Python 03](/Python/Python_03.md)
 * [Python 04](/Python/Python_04.md)
+* [Python 05](/Python/Python_05.md)
 
 [🔝](#📖today-i-learned)
 
