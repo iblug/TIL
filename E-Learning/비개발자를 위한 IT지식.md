@@ -30,6 +30,7 @@
 # 5. 네트워크
 * 클라이언트(프론트 엔드) - 사용자
 * 클라이언트와 서버사이에 데이터를 전송
+* LAN(Local Area Network), MAN(Metropolitan), WAN(Wide)
 
 > # 🌈*클라이언트(Frontend)*
 
@@ -37,7 +38,10 @@
 * 애플리케이션
 * 웹
 * 웹 브라우저
+
 # 7. 웹 사이드 이슈들
+* Chrome, IE, Firefox, Opera, Safari
+* IE는 더이상 사용하지 않음
 
 > # 🌈*서버(Backend)*
 
@@ -82,8 +86,19 @@
 > # 🌈*데이터 베이스*
 
 # 13. 데이터 베이스
+* Data Base(DB) : 데이터의 집합소
+* RDMBS(Relational Database Management System)
+  * 관계형 데이터 베이스 관리 시스템
+  * MySQL, Oracle, MariaDB 등
+* SQL(Structured Query Language)
+  * 데이터 베이스를 사용할 때 데이터에 접근하기 위해 사용하는 언어
+* 데이터의 무결성
+  * 데이터는 완전무결하게 존재해야 함
+  * 데이터가 전송, 저장되고 처리되는 모든 과정에서 변경되거나 손상되지 않고 완전성, 정확성, 일관성을 유지함을 보장하는 특성
 
 # 14. 데이터 베이스 심화
+* 빅데이터
+* 머신러닝
 
 > # 🌈*정리*
 
@@ -91,3 +106,4 @@
   * ...
 
 * 미래에는..
+  * 자율주행, AI, AR, VR, 블록체인, ...
