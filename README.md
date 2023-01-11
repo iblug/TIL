@@ -27,6 +27,7 @@
 * [Python 05](/Python/Python_05.md)
 * [Python 06](/Python/Python_06.md)
 * [Python 07](/Python/Python_07.md)
+* [Python 08](/Python/Python_08.md)
 
 [🔝](#📖today-i-learned)
 
