@@ -33,8 +33,16 @@
 ## 업데이트(Update)
 * **특정 값을 변경할 때:** 0이 아닌 마지막 비트만큼 더하면서 구간들의 값을 변경
 
+![Alt text](../../image/bit_update.png)
 ## 누적 합(Prefix Sum)
 * **1부터 N까지의 합(누적 합)** 구하기: 0이 아닌 마지막 비트만큼 빼면서 구간들의 값의 합 계산
 
+![Alt text](../../image/bit_prefix_sum.png)
+
+## 구현 코드
 ![bit](../../image/binary_index_tree.png)
 ![bit_c](../../image/binary_index_tree_c.png)
+
+
+> 참고 사이트(~~봐도 모르겠다...~~)
+[펜윅트리](https://wondangcom.com/1582)
