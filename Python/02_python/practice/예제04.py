@@ -131,8 +131,8 @@ list_variable[3] 가 인덱스 범위를 벗어났다.
 
 try:
     number = 1
-    if number == 1
-        print(number)
+    # if number == 1
+        # print(number)
 
 except:
     print('에러가 발생했습니다.')
