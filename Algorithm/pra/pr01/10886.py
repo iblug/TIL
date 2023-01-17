@@ -2,12 +2,12 @@
 # 0 = not cute / 1 = cute
 
 import sys
-import time
+# import time
 sys.stdin = open('input.txt', 'r')
 
 
 n = int(input())
-start = time.time()
+# start = time.time()
 '''
 s = ''
 for _ in range(n):
@@ -33,5 +33,22 @@ else:
     print('Junhee is cute!')
 
 
-end = time.time()
-print(end - start)
+# end = time.time()
+# print(end - start)
+
+
+# 더 간단하게
+cnt = 0
+for _ in range(n):
+    cnt += int(input())
+
+if cnt > n // 2:
+    print('Junhee is cute!')
+else:
+    print('Junhee is not cute!')
+
+
+
+# 방법이 다양한거 같다
+
+

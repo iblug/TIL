@@ -10,3 +10,5 @@ a = list(map(int, input().split()))
 for num in a:
     if num < x:
         print(num,end=' ')
+
+# list에 넣고 print(*result)로 출력하는 방법도 있음

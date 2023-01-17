@@ -6,12 +6,17 @@ sys.stdin = open('input.txt', 'r')
 
 n = int(input())
 r = input().split()
-sum = 0
+sum_ = 0
 s = 0
 for i in r:
     if i == '1':
         s +=1
-        sum += s
+        sum_ += s
     else:
         s = 0
-print(sum)
+print(sum_)
+
+#######
+
+# while 써보기
+
