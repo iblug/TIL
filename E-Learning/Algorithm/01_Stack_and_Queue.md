@@ -6,6 +6,7 @@
   * *C++ : push & pop, top*
   * *Java : push & pop, peek*
 ```py
+# 5-1 126
 stack = []
 
 # 삽입(5) - 삽입(2) - 삽입(3) - 삽입(7) - 삭제() - 삽입(1) - 삽입(4) - 삭제()
@@ -34,6 +35,7 @@ print(stack[::-1]) # 최상단 원소부터 출력
   * *list에서는 pop이후에 원소의 위치를 조정함*
 * `from collections import deque`
 ```py
+# 5-2 129
 from collections import deque
 
 # 큐(Queue) 구현을 위해 deque 라이브러리 사용
