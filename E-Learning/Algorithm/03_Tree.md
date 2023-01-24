@@ -21,7 +21,7 @@
   * **중위 순회(in-order traverse)**: 왼쪽 자식을 방문한 뒤에 루트를 방문
   * **후위 순회(post-order traverse)**: 오른쪽 자식을 방문한 뒤에 루트를 방문
 
-![tree_traversal](../../image/tree_traversal.png)
+![tree_traversal](images/03_tree_traversal.png)
 
 ```py
 class Node:
