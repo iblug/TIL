@@ -127,7 +127,7 @@ def lca(a, b):
             b = parent[b][i]
     # 부모가 같아지도록
     if a == b:
-        return a;
+        return a
     for i in range(LOG - 1, -1, -1):
         # 조상을 향해 거슬러 올라가기
         if parent[a][i] != parent[b][i]:
