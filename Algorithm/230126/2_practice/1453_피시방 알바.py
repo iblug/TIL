@@ -12,3 +12,5 @@ for i in x:
     else:
         cnt +=1
 print(cnt)
+
+# set로 풀어보기
