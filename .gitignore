@@ -1,5 +1,5 @@
 **/test*.py
 99_summary.md
-input*.txt
+**/*input*.txt
 **/임시*/
 **/parsing.py
