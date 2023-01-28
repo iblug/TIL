@@ -130,3 +130,96 @@ print(lcm(21, 14)) # 최소 공배수(LCM) 계산
 # 7
 # 42
 ```
+
+<br><br><br><br><br>
+
+## 그 외..
+### deque(collection)
+```py
+from collections import deque
+
+data = deque([2, 3, 4])
+data.popleft()
+data.appendleft(1)
+data.append(5)
+
+print(data)
+# deque([1, 3, 4, 5])
+print(list(data)) # 리스트 자료형으로 변환
+# [1, 3, 4, 5]
+```
+
+### math
+```py
+import math
+
+print(math.factorial(5)) # 5 팩토리얼을 출력
+# 120
+
+print(math.sqrt(7)) # 7의 제곱근을 출력
+# 2.6457513110645907
+
+print(math.pi) # 파이(pi) 출력
+print(math.e) # 자연상수 e 출력
+# 3.141592653589793
+# 2.718281828459045
+```
+
+### bisect
+* '정렬된 배열'에서 특정한 원소를 찾아야 할 때 매우 효과적으로 사용
+* $O(logN)$
+  * bisect_left(a, x): 정렬된 순서를 유지하면서 리스트 a에 데이터 x를 삽입할 가장 왼쪽 인덱스를 찾는 메서드
+  * bisect_right(a, x): 정렬된 순서를 유지하면서 리스트 a에 데이터 x를 삽입할 가장 오른쪽 인덱스를 찾는 메서드
+```py
+from bisect import bisect_left, bisect_right
+
+a = [1, 2, 4, 4, 8]
+x = 4
+
+print(bisect_left(a, x))
+print(bisect_right(a, x))
+# 2
+# 4
+```
+
+* '정렬된 리스트'에서 '값이 특정 범위에 속하는 원소의 개수'를 구할 때
+  * $O(logN)$으로 빠르게 계산할 수 있음
+```py
+from bisect import bisect_left, bisect_right
+
+# 값이 [left_value, right_value]인 데이터의 개수를 반환하는 함수
+def count_by_range(a, left_value, right_value):
+    right_index = bisect_right(a, right_value)
+    left_index = bisect_left(a, left_value)
+    return right_index - left_index
+
+# 리스트 선언
+a = [1, 2, 3, 3, 3, 3, 4, 4, 8, 9]
+
+# 값이 4인 데이터 개수 출력
+print(count_by_range(a, 4, 4))
+# 2
+
+# 값이 [-1, 3] 범위에 있는 데이터 개수 출력
+print(count_by_range(a, -1, 3))
+# 6
+```
+
+### heapq
+```py
+import heapq
+
+def heapsort(iterable):
+    h = []
+    result = []
+    # 모든 원소를 차례대로 힙에 삽입
+    for value in iterable:
+        heapq.heappush(h, value) # 최대힙: -value
+    # 힙에 삽입된 모든 원소를 차례대로 꺼내어 담기
+    for _ in range(len(h)):
+        result.append(heapq.heappop(h)) # 최대힙: -heapq.heappop(h)
+    return result
+result = heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+print(result)
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
