@@ -25,6 +25,8 @@
   * Minheap(최소 힙)으로 구현되어 있음(가장 작은 값이 먼저옴)
   * 삽입, 삭제, 수정, 조회 **연산의 속도가 리스트보다 빠르다**
 
+[공식문서](https://docs.python.org/ko/3/library/heapq.html?highlight%3Dheap#module-heapq)
+
 [공식문서](https://docs.python.org/ko/3/tutorial/datastructures.html?highlight%3D%EB%A6%AC%EC%8A%A4%ED%8A%B8#using-lists-as-stacks)
 
 | 연산 종류 | 힙(Heap) | 리스트(List) |
@@ -49,7 +51,7 @@
   * `.add()`
   * `.remove()`
   * `|` (합)
-  * `\-` (차)
+  * `-` (차)
   * `&` (교)
   * `^` (대칭차)
 * 셋(Set) 연산의 시간 복잡도
