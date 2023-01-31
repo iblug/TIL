@@ -77,5 +77,149 @@ matrix = [list(map(int, input().split())) for _ in range(n)]
 ```
 
 # 3. 순회
-# 4. 전치
+1. 이중 for문을 이용한 **행 우선 순회**
+```py
+matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 0, 1, 2]
+]
+
+for i in range(3): # 행
+    for j in range(4): # 열
+        print(matrix[i][j], end=' ')
+    print()
+```
+2. 이중 for문을 이용한 **열 우선 순회**
+```py
+matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 0, 1, 2]
+]
+
+for i in range(4): # 열
+    for j in range(3): # 행
+        print(matrix[j][i], end=' ')
+    print()
+```
+## 총합
+1. 행 우선 순회를 이용해 이차원 리스트의 **총합** 구하기
+```py
+matrix = [
+  [1, 1, 1, 1],
+  [1, 1, 1, 1],
+  [1, 1, 1, 1]
+]
+
+total = 0
+
+for i in range(3):
+  for j in range(4):
+    tatal += matrix[i][j]
+
+print(total)
+# 12
+```
+2. Pythonic한 방법으로 이차원 리스트의 **총합** 구하기
+```py
+matrix = [
+  [1, 1, 1, 1],
+  [1, 1, 1, 1],
+  [1, 1, 1, 1]
+]
+
+total = sum(map(sum, matrix))
+
+print(total)
+# 12
+```
+0. *각 행별, 열별 합 구하기*
+```py
+```
+## 최대값
+1. 행 우선 순회를 이용해 이차원 리스트의 **최댓값, 최솟값** 구하기
+```py
+matrix = [
+  [0, 5, 3, 1],
+  [4, 6, 10, 8],
+  [9, -1, 1, 5]
+]
+
+# 최댓값
+max_value = 0
+
+for i in range(3):
+    for j in range(4):
+        if matrix[i][j] > max_value:
+            max_value = matrix[i][j]
+
+print(max_value)
+# 10
+
+# 최솟값
+min_value = 1e9
+
+for i in range(3):
+    for j in range(4):
+        if matrix[i][j] < min_value:
+            if matrix[i][j] = matrix[i][j]
+
+print(min_calue)
+# -1
+```
+2. Pythonic한 방법으로 이차원 리스트의 **최댓값, 최솟값** 구하기
+```py
+matrix = [
+  [0, 5, 3, 1],
+  [4, 6, 10, 8],
+  [9, -1, 1, 5]
+]
+
+max_value = max(map(max, matrix))
+min_value = min(map(min, matrix))
+
+print(max_value)
+# 10
+print(min_value)
+# -1
+```
+
+# 4. 전치(transpose)
+* 행렬의 행과 열을 서로 맞바꾸는 것
+```py
+matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 0, 1, 2]
+]
+
+transposed_matrix = [[0] * 3 for _ in range(4)]
+
+for i in range(4):
+    for j in range(3):
+        transposed_matrix[i][j] = matrix[j][i]
+```
+
 # 5. 회전
+```py
+matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+
+n = 3
+rotated_left_matrix = [[0] * n for _ in range(n)]
+rotated_right_matrix = [[0] * n for _ in range(n)]
+new_matrix = [[0] * n for _ in range(n)]
+
+for i in range(n):
+    for j in range(n):
+        rotated_left_matrix[i][j] = matrix[j][n-i-1] # 좌회전
+        rotated_right_matrix[i][j] = matrix[n-j-1][i] # 우회전
+        new_matrix[i][j] = matrix[n-j-1][n-j-1] # 180도
+
+```
+
+* *zip()*

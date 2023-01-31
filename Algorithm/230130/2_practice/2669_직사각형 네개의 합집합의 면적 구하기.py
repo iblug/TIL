@@ -13,3 +13,5 @@ for _ in range(4):
 print(sum(map(sum, g)))
 
 # 바뀐적 있을 때만 + 해준다
+
+# set
