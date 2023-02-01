@@ -14,9 +14,16 @@
 * [Algorithm](/E-Learning/Algorithm/)
 
 ## [Algorithm](Algorithm)
-* 
-
-
+* [introduction](Algorithm/01-1_Coding_Test.md)
+* [Standard In Out](Algorithm/01-2_Stdio.md)
+* [Time Complexity and Big-O](Algorithm/02-1_Time_Complexity_and_Big-O.md)
+* [List](Algorithm/02-2_List.md)
+* [String](Algorithm/03_String.md)
+* [Dictionary](Algorithm/04_Dictionary.md)
+* [Stack and Queue](Algorithm/05_Stack_and_Queue.md)
+* [Heap and Set](Algorithm/06_Heap_and_Set.md)
+* [Matrix](Algorithm/07_Matrix.md)
+* [Exhaustive Search](Algorithm/08_Exhaustive_Search.md)
 
 ## [git](/git/)
 * [git](/git/git.md)
