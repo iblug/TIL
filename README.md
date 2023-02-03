@@ -24,7 +24,7 @@
 * [Heap and Set](Algorithm/06_Heap_and_Set.md)
 * [Matrix](Algorithm/07_Matrix.md)
 * [Exhaustive Search](Algorithm/08_Exhaustive_Search.md)
-
+* [Graph](Algorithm/09_Graph.md)
 ## [git](/git/)
 * [git](/git/git.md)
 * [github](/git/github.md)
