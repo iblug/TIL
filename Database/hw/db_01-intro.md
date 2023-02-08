@@ -11,6 +11,8 @@
   * MySQL Workbench: GUI 형식
 * 두가지가 설치 된다.
 
+[MySQL Workbench 공식문서](https://dev.mysql.com/doc/workbench/en/)
+
 ## 초기 설정
 * Edit - Preferences
   * Query Editor
