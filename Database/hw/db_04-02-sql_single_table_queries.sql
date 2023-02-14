@@ -122,7 +122,7 @@ FROM
 GROUP BY
 	country
 ORDER BY
-	2 DESC;
+	2 DESC,	1 DESC;
     
 -- 문제 14
 SELECT
