@@ -80,3 +80,8 @@ RIGHT [OUTER] JOIN  table2
 # JOIN 정리
 ![db_join](../image/db_07_02.png)
 [SQL Joins Visualizer](https://sql-joins.leopard.in.ua/)
+
+# 99. 기타
+* FULL OUTER JOIN
+* USING
+* NATURAL JOIN
