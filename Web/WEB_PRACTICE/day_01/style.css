@@ -1,0 +1,15 @@
+.make-blue-color {
+  /* color: royalblue; */
+  /* color: steelblue; */
+  color: rgb(48, 96, 168);
+}
+
+.gray-bold-italic {
+  color: gray;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.make-red {
+  color: red;
+}

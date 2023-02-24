@@ -105,3 +105,130 @@
   </ol>
 </body>
 ```
+
+# 3. Styling the web
+## 3-1. Introduction to CSS
+### CSS
+* Cascading Style Sheet
+* 웹 페이지의 디자인과 레이아웃을 구성하는 언어
+* CSS 구문
+```css
+h1 {
+  color: blue;
+  font-size: 15px;
+}
+```
+* 선택자(Selector): `h1`
+* 선언(Declaration)
+* 속성(Property): `font-size`
+* 값(Value)
+
+### CSS 적용 방법
+1. 인라인(Inline) 스타일
+  * 태그의 속성에 작성
+2. 내부(Internal) 스타일 시트
+  * `head`안에 `style`태그 안에 작성
+3. 외부(Extenal) 스타일 시트
+  * 별도의 CSS 파일 생성 후 불러오기
+
+## 3-3. Select elements
+### CSS Selectors
+* HTML 요소를 선택하여 스타일을 적용할 수 있도록 함
+
+### CSS Selectors 종류
+* 기본 선택자
+  * 전체(`*`) 선택자
+  * 요소(tag) 선택자
+    * 지정한 모든 태그를 선택
+  * 클래스(class) 선택자
+    * 주어진 클래스 속성을 가진
+  * 아이디(id) 선택자
+    * 주어진 아이디 속성을 가진 요소 선택
+    * 문서에는 주어진 아이디를 가진 요소가 하나만 있어야함
+  * 속성(attr) 선택자
+- 결합자(Combinators)
+  * 자손 결합자(` `(space))
+    * 첫 번째 요소의 자손 요소들 선택
+  * 자식 결합자(`>`)
+    * 첫 번째 요소의 직계 자식만 선택
+
+## 3-2. Cascade & Specificity
+* 동일한 요소에 적용 가능한 같은 스타일을 두 가지 이상 작성했을 때
+어떤 규칙이 이기는지 결정하는 것
+
+### Cascade(계단식)
+* 동일한 우선순위를 갖는 규칙이 적용될 때 CSS에서 마지막에 나오는 규칙이 사용
+```css
+h1 {
+  color: red;
+}
+
+h1 {
+  color: blue;
+}
+/* h1태그 내용의 색은 blue 가 적용됨 */
+```
+
+### Specificity(우선순위)
+* 선택자 별로 정해진 우선순위 점수에 따라 점수가 높은 규칙이 사용
+1. Importance
+    * `!important`
+    * Cascade의 구조를 무시하고 모든 우선순위 점수 계산을 무효화하는 가장 높은 우선순위.
+    * *반드시 필요한 경우가 아니면 절대 사용하지 않는 것을 권장.*
+2. 우선순위
+    1. 인라인 스타일
+    2. id 선택자
+    3. class 선택자
+    4. 요소 선택자
+3. 소스 코드 순서
+
+## 상속
+* 기본적으로 CSS는 상속을 통해 부모 요소의 속성을 자식에게 상속함
+* 이를 이용해 코드의 재사용성을 높임
+* 상속 되는 속성
+  * Text 관련 요소(font, color, text-align), opacity, visibility 등
+* 상속 되지 않는 속성
+  * Box model 관련 요소(width, height, margin, padding, border, box-sizing, display)
+  * position 관련 요소(position, top/right/bottom/left, z-index) 등
+```css
+/* css */
+.parent {
+  /* 상속O */
+  color: red;
+
+  /* 상속X */
+  border: 1px solid black;
+}
+```
+```html
+<!-- html -->
+<ul class="parent">
+  <li class="child">Hello</li>
+  <li class="child">Bye</li>
+</ul>
+```
+
+# 99. 참고
+## HTML 관련 사항
+* HTML 요소 이름은 대소문자를 구분하지 않지만 **"소문자"** 사용을 권장
+* HTML 속성의 따옴표는 작은 따옴표와 큰 따옴표를 구분하지 않지만 **"큰 따옴표"** 권장
+* HTML은 프로그래밍 언어와 달리 에러를 반환하지 않기 때문에 작성 시 주의
+
+## CSS 인라인 스타일은 사용하지 말 것
+* 문서 유지보수가 힘들어짐
+* CSS와 HTML 구조 정보가 혼합되어 작성되기 때문에 코드를 이해하기 어렵게 만듦
+
+## CSS의 모든 속성을 외우는 것 아님
+* 주로 활용하는 속성 위주로 학습하기
+
+## 속성은 되도록 class만 사용하도록 함
+* 개발 시 id, 요소 선택자 등 여러 선택자들과 함꼐 사용할 경우 우선순위 규칙에 따라 예기치 못한 스타일 규칙이 적용되어 전반적인 유지보수가 어려워 질 수 있기 때문
+* 문서에서 단 한번 유일하게 적용될 스타일에 경우에만 id 선택자 사용을 고려
+
+## CSS 상속 여부는 MDN 문서에서 확인
+* MDN 각 문서 하단에 속성별로 상속 여부를 확인할 수 있음
+* [MDN HTML 기초](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/HTML_basics)
+* [MDN HTML 태그](https://developer.mozilla.org/ko/docs/Web/HTML/Element)
+* [MDN CSS 기초](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/CSS_basics)
+* [MDN CSS 선택자](https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Selectors)
+- [CSS 선택자 연습 게임](https://flukeout.github.io/)
