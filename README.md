@@ -9,6 +9,7 @@
 * [git](#git)
 * [markdown](#markdown)
 * [Python](#python)
+* [Web](#web)
 
 ## [E-Learning](/E-Learning/)
 * [비개발자를 위한 IT지식](/E-Learning/%EB%B9%84%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC%20%EC%9C%84%ED%95%9C%20IT%EC%A7%80%EC%8B%9D.md)
@@ -33,6 +34,12 @@
 * [SQL-Basic](Database/03_SQL-Basics.md)
 * [SQL-Single Table 1](Database/04-1_SQL-Single_Table_Queries.md)
 * [SQL-Single Table 2](Database/04-2_SQL-Single_Table_Queries.md)
+* [SQL-Managing Tables](Database/05_SQL-Managing_Tables.md)
+* [SQL-Modifying Data](Database/06_SQL-Modifying_Data.md)
+* [SQL-Multi_Table_Queries](Database/07_SQL-Multi_Table_Queries.md)
+* [SQL-Nested_Queries](Database/08_SQL-Nested_Queries.md)
+* [SQL-Advanced](Database/09-1_SQL-Advanced.md)
+* [Normalization & Data Modeling](Database/09-2_SQL-Advanced.md)
 
 ## [git](/git/)
 * [git](/git/git.md)
@@ -52,6 +59,10 @@
 * [Python 07](/Python/Python_07.md)
 * [Python 08](/Python/Python_08.md)
 * [Python 09](/Python/Python_09.md)
+
+## [Web](Web)
+* [Fundamentals of HTML and CSS](Web/01_Web-Fundamentals_of_HTML_and_CSS.md)
+* [The box model](Web/02_Web-The_box_model.md)
 
 [🔝](#📖today-i-learned)
 
