@@ -1,4 +1,4 @@
-# Web-Fundaemtals of HTML and CSS
+# Web-Fundametals of HTML and CSS
 ## 목차
 1. Introduction of web page
 2. Structuring the web
