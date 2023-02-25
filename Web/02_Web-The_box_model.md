@@ -155,3 +155,7 @@ margin: 10px 20px 30px 40px;
 * 웹 개발자가 레이아웃을 더욱 쉽게 관리할 수 있도록 함
   * 각 요소에 대한 상/하 margin을 각각 설정하지 않고 한 요소에 대해서만 설정할 수 있음
 ![margin_collapsing](../image/web_02_3.png)
+
+## 추가 학습 링크
+* [MDN Box Model](https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/The_box_model)
+* [MDN Background & Border](https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
