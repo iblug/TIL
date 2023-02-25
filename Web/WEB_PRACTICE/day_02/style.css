@@ -1,0 +1,25 @@
+#job {
+  color: gray;
+  font-style: italic;
+  border-bottom: 0.1em black dashed;
+}
+
+#nick {
+  color: red;
+  font-weight: bold;
+}
+.profile {
+  margin: 5%;
+}
+.profile p {
+  padding: 5px;
+  border-bottom: 2px black solid;
+  font-size: smaller;
+}
+
+.card {
+  margin: 20px;
+  padding: 10px;
+  border: solid;
+  width: fit-content;
+}
