@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품 정보 카드</title>
+  <style>
+    * {
+      box-sizing: content-box;
+    }
+    
+    .card {
+      position: relative;
+      width: 300px;
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      
+      /* border: 2px solid black; */
+    }
+    
+    .product {
+      width: 100%;
+    }
+    
+    .flag {
+      position: absolute;
+      width: 10%;
+      left: 5%;
+    }
+    
+    .season {
+      position: absolute;
+      width: 30%;
+      right: 0;
+    }
+    
+    .contents {
+      line-height: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="card">
+    <div>
+      <img src="03_1.png" alt="상품" class="product">
+      <img src="03_2.png" alt="flag" class="flag">
+      <img src="03_3.png" alt="시즌위크" class="season">
+      <div class="contents">
+        <p>LG전자</p>
+        <p>LG 디오스 노크온</p>
+        <p>1,700,000</p>
+        <p><span>⭐4.8</span>리뷰 300</p>
+      </div>  
+    </div>
+  </a>
+</body>
+</html>
