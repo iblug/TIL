@@ -332,7 +332,7 @@ $RECYCLE.BIN/
 
 
 
-**/test*.py
+**/*test*
 99_summary.md
 **/*input*.txt
 **/임시*/
