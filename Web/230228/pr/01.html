@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar 레이아웃</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .container-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: skyblue;
+      flex-wrap: wrap;
+    }
+
+    .logobox, 
+    .loginbox {
+      height: 70%;
+      flex-basis: 250px;
+      text-align: center;
+      font-size: 2rem;
+      margin: 50px;
+      
+      padding: 1rem;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-navbar">
+    <div class="logobox">Logo</div>
+    <div class="loginbox">Login</div>
+  </div>
+</body>
+</html>

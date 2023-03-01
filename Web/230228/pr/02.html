@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가로 Content 레이아웃</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: silver;
+    }
+
+    .container-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: lightblue;
+      flex-wrap: wrap;
+      margin: 50px;
+      
+    }
+    
+    .logobox, 
+    .loginbox {
+      height: 70%;
+      flex-basis: 250px;
+      font-size: 2rem;
+      margin: 50px;
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    .content-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: lightblue;
+      margin: 50px;
+      padding: 50px 30px;
+      
+      /* border: 2px solid black; */
+    }
+    
+    .content {
+      flex-basis: 300px;
+      flex-grow: 1;
+      margin: 30px 50px;
+      /* border: 2px solid black; */
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container-navbar">
+    <div class="logobox">Logo</div>
+    <div class="loginbox">Login</div>
+  </div>
+  <div class="content-area">
+    <div class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint fugiat quis dolorem molestias voluptates! Ratione est vero eum voluptas nisi rerum possimus, nulla architecto veniam, deserunt necessitatibus temporibus, soluta hic quaerat voluptatibus maxime laborum assumenda voluptates reiciendis officiis facilis dolor. Alias quas ad, ab nulla, dolorem fugiat ea eveniet incidunt, ipsa accusamus voluptas aliquid illum eius quos natus corporis in iusto. Optio odit nemo illo provident nobis nostrum veritatis ipsum.</div>
+    <div class="content">풀이 이제 패, 멀리 비둘기, 부끄러운 까닭입니다. 그리워 이름자 벌레는 내린 이름을 어머니, 이제 거외다. 다 별 소녀들의 멀리 이름자를 어머니, 까닭입니다. 추억과 위에 아직 아침이 패, 시와 있습니다. 잠, 다 경, 책상을 불러 밤이 별 이런 까닭입니다. 잠, 라이너 헤일 아름다운 쉬이 애기 시와 노루, 까닭입니다. 딴은 풀이 위에 겨울이 마디씩 이름을 있습니다. 아직 별 시인의 부끄러운 흙으로 이름자를 이제 별이 노루, 거외다. 아침이 별이 어머니 이웃 있습니다.</div>
+    <div class="content">설레는 열락의 기관과 풍부하게 모래뿐일 내려온 꽃이 열매를 그러므로 사막이다. 그들은 주며, 천지는 소담스러운 꾸며 사랑의 뭇 피부가 있음으로써 때문이다. 싹이 인류의 고행을 있는 힘차게 열매를 풀이 새 철환하였는가? 갑 그와 설레는 심장의 바이며, 커다란 어디 것이다. 붙잡아 심장은 크고 보는 이것은 그러므로 뜨고, 끓는다. 이상의 돋고, 그들은 칼이다. 방황하였으며, 할지라도 끝까지 창공에 사람은 무엇이 품에 힘차게 아니더면, 위하여서. 새 이 영원히 아니다. 공자는 그들은 이상이 교향악이다. 예수는 방지하는 창공에 뼈 어디 열락의 못할 오아이스도 설산에서 듣는다.</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer를 포함한 복합 레이아웃</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      
+      /* border: 2px solid black; */
+    }
+
+    body {
+      background-color: silver;
+    }
+
+    .container-navbar {
+      display: flex;
+      align-items: center;
+      background-color: lightblue;
+      flex-wrap: wrap;
+      margin: 50px;
+      
+    }
+    
+    .logobox, 
+    .loginbox,
+    .signupbox {
+      height: 70%;
+      flex-basis: 250px;
+      text-align: center;
+      font-size: 2rem;
+      margin: 50px;
+      padding: 1rem; 
+    }
+    
+    .signupbox {
+      margin-left:auto;
+      margin-right: 25px;
+    }
+    .loginbox {
+      margin-left: 25px;
+      margin-right: 50px;
+    } 
+
+    .content-area-col {
+      display: flex;
+      flex-direction: column;
+      background-color: lightblue;
+      margin: 50px;
+      padding: 50px 30px;
+    }
+    
+    .content {
+      margin: 30px 50px;
+      flex: 1;
+    }
+    
+    .content-area-row{
+      display: flex;
+      flex-flow: row wrap;
+      background-color: khaki;
+      margin: 50px 0;
+      padding: 50px 30px;
+      
+    }
+    
+    .content-row1 {
+      flex-grow: 99;
+      flex-basis: 200px;
+    }
+    .content-row2 {
+      flex: 40;
+      flex-basis: 200px;
+    }
+    .content-row3 {
+      flex: 1;
+      flex-basis: 200px;
+    }
+
+    .footer {
+      background-color: lightblue;
+      margin: 50px;
+      padding-top: 2rem;
+
+      height: 150px;
+      font-size: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-navbar">
+    <div class="logobox">Logo</div>
+    <div class="signupbox">Signup</div>
+    <div class="loginbox">Login</div>
+  </div>
+  <div class="content-area-col">
+    <div class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint fugiat quis dolorem molestias voluptates! Ratione est vero eum voluptas nisi rerum possimus, nulla architecto veniam, deserunt necessitatibus temporibus, soluta hic quaerat voluptatibus maxime laborum assumenda voluptates reiciendis officiis facilis dolor. </div>
+    <div class="content">풀이 이제 패, 멀리 비둘기, 부끄러운 까닭입니다. 그리워 이름자 벌레는 내린 이름을 어머니, 이제 거외다. 다 별 소녀들의 멀리 이름자를 어머니, 까닭입니다. 추억과 위에 아직 아침이 패, 시와 있습니다. 잠, 다 경, 책상을 불러 밤이 별 이런 까닭입니다. 잠, 라이너 헤일 아름다운 쉬이 애기 시와 노루, 까닭입니다.</div>
+    <div class="content content-area-row">
+      <div class="content content-row1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi omnis inventore maiores! Ullam recusandae maxime impedit corporis quasi sequi atque et maiores voluptatum saepe itaque sit, illum enim, at vero?</div>
+      <div class="content content-row2">때 이름과, 같이 헤일 가을로 나는 밤을 있습니다. 이름을 하나에 많은 까닭입니다. 나는 위에도 이름과, 새겨지는 하나의 말 속의 봅니다. 가을로 이런 나는 벌레는 시와 하나의 겨울이 거외다.</div>
+      <div class="content content-row3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem ducimus omnis voluptate!</div>
+    </div>
+  </div>
+  <div class="footer">
+    footer
+  </div>
+</body>
+</html>
