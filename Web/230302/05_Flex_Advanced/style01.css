@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+
+  /* border: 2px solid black; */
+}
+
+.card {
+  border: 2px solid black;
+  position: relative;
+  width: fit-content;
+  /* min-width: 1000px; */
+}
+
+.img{
+  position: relative;
+}
+
+.img-person {
+  width: 100%;
+  /* min-width: 300px; */
+}
+
+.img-flag {
+  position: absolute;
+  width: 17%;
+  right: 0;
+}
+
+.contents {
+  margin: 20px;
+  /* min-width: 300px; */
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexbox-nowrap {
+  display: flex;
+  flex: row nowrap;
+}
+.flex-item {
+  flex-basis: content;
+}
+
+.font-bold {
+  font-weight: bold;
+}

@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+
+  /* border: 2px solid black; */
+}
+
+.card {
+  border: 2px solid black;
+  position: relative;
+  width: fit-content;
+}
+
+.img{
+  position: relative;
+
+}
+
+.img-person {
+  width: 100%;
+}
+
+.img-flag {
+  position: absolute;
+  width: 17%;
+  right: 0;
+}
+
+.contents {
+  margin: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-item {
+  flex-basis: auto;
+}
+
+.font-bold {
+  font-weight: bold;
+}
