@@ -63,6 +63,11 @@
 ## [Web](Web)
 * [Fundamentals of HTML and CSS](Web/01_Web-Fundamentals_of_HTML_and_CSS.md)
 * [The box model](Web/02_Web-The_box_model.md)
+* [Positioning for CSS layout](Web/03_Web-Positioning_for_CSS_layout.md)
+* [Floating for CSS layout](Web/04_Web-Floating_for_CSS_layout.md)
+* [Flexible box for CSS layout](Web/05_Web-Flexible_box_for_CSS_layout.md)
+* [Semantic Web](Web/06_Web-Semantic_Web.md)
+
 
 [🔝](#📖today-i-learned)
 
