@@ -38,3 +38,45 @@
 * 이미 스타일이 작성되어 있고 독특한 규칙이 있는 클래스 이름까지
 * 우리는 설명서를 보며 Bootstrap이라는 도구상자를 어떻게 사용할 지 학습할 것
 
+# 2. Typography 및 Color
+## Typograpy
+* Headings
+* Display headings
+* Inline text elements
+* List
+## Bootstrap Color system
+* Bootstrap이 지정하고 제공하는 색상 시스템
+* Colors
+* Text colors
+* Background colors
+* 실습
+  * 너비와 높이가 각각 200px인 정사각형 작성
+
+# 3. Component
+* Bootstrap에서 제공하는 UI 관련 요소
+  * 일관된 디자인, 쉬운 프로토타입 제작 및 사용자 경험
+* 대표 Component 사용해보기
+  * Alerts
+  * Badges
+  * Buttons
+  * Cards
+  * Navbar
+  
+# 99. 참고
+## CND (Content Delivery Network)
+* 지리적 제약 없이 빠르고 안전하게 콘텐츠를 전송할 수 있는 전송 기술
+  * 서버와 사용자 사이의 물리적인 거리를 줄여 콘텐츠 로딩에 소요되는 시간을 최소화
+  * (웹 페이지 로드 속도를 높임)
+  * 지리적으로 사용자와 가까운 CDN 서버에 콘텐츠를 저장해서 사용자에게 전달
+## Bootstrap CDN
+1. Bootstrap 홈페이지 - Download - "Compiled CSS and JS" Download
+2. CDN을 통해 가져오는 bootstrap css와 js 파일을 확인
+3. bootstrap.css 파일을 참고하여, 현재까지 작성한 클래스에 적용된 스타일을 직접 확인
+## Bootstrap을 사용하는 이유
+* 손쉬운 반응형 웹 디자인 구현
+* 빠른 개발과 유지보수
+  * 미리 디자인된 다양한 컴포넌트 및 기능
+  * 일관된 코드와 문서
+* 커스터마이징(customizing)이 용이
+* 크로스 브라우징(Cross browsing) 지원
+  * 모든 주요 브라우저에서 작동하도록 설계되어 있음
