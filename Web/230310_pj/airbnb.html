@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirBnb 클론코딩</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <main class="container">
+    <!-- navbar -->
+    <nav class="navbar sticky-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand d-inline-block" href="#">
+          <i class="fa-brands fa-airbnb text-danger"> AirBnb</i>
+        </a>
+        <div class="">
+          <!-- 간격 수정 -->
+          <ul class="d-inline-flex justify-content-between list-unstyled">
+            <li class="">회원가입</li>
+            <li class="">로그인</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- 한국의 휴가 form [모바일]-->
+    <section class="container pt-3 d-md-none">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <h3>한국의 휴가 임대 시설</h3>
+          <p class="text-muted">에어비앤비에서 독특한 숙소를 예약하세요.</p>
+          <!-- form -->
+          <form class="form-floating mb-2">
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="???" value="한국">
+            <label for="floatingInputValue">위치</label>
+          </form>
+          <div class="input-group mb-2">
+            <form class="form-floating">
+              <input type="date" class="form-control" id="floatingInputValue2" placeholder="???" value="날짜 입력">
+              <label for="floatingInputValue2">체크인</label>
+            </form>
+            <form class="form-floating">
+              <input type="date" class="form-control" id="floatingInputValue2" placeholder="???" value="날짜 입력">
+              <label for="floatingInputValue2">체크아웃</label>
+            </form>
+          </div>
+          <div class="input-group mb-2">
+            <div class="form-floating">
+              <select class="form-select" id="adult" aria-label="어른 인원 체크">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="0">0</option>                
+              </select>
+              <label for="adult">성인</label>
+            </div>
+            <div class="form-floating">
+              <select class="form-select" id="kids" aria-label="어린이 인원 체크">
+                <option selected value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>                
+              </select>
+              <label for="kids">어린이</label>
+            </div>
+          </div>
+          <div class="d-grid gap-2"><button type="button" class="btn btn-danger mb-4"><i class="bi bi-search"></i>검색</button></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 한국의 휴가 form [PC]-->
+    <section class="container d-none d-md-block" style="min-height: 600px;">
+      <div class="d-flex">
+        <div class="" style="margin-left: 200px; min-height: 600px;">
+          <img class="img-fluid rounded"src="assets/images/04.webp" alt="">
+        </div>
+        <div class="position-absolute bg-light rounded shadow mt-5 pt-3 px-3" style="width: 430px;">
+          <h3>한국의 휴가 임대 시설</h3>
+          <p class="text-muted">에어비앤비에서 독특한 숙소를 예약하세요.</p>
+          <!-- form -->
+          <form class="form-floating mb-2">
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="???" value="한국">
+            <label for="floatingInputValue">위치</label>
+          </form>
+          <div class="input-group mb-2">
+            <form class="form-floating">
+              <input type="date" class="form-control" id="floatingInputValue2" placeholder="???" value="날짜 입력">
+              <label for="floatingInputValue2">체크인</label>
+            </form>
+            <form class="form-floating">
+              <input type="date" class="form-control" id="floatingInputValue2" placeholder="???" value="날짜 입력">
+              <label for="floatingInputValue2">체크아웃</label>
+            </form>
+          </div>
+          <div class="input-group mb-2">
+            <div class="form-floating">
+              <select class="form-select" id="adult" aria-label="어른 인원 체크">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="0">0</option>                
+              </select>
+              <label for="adult">성인</label>
+            </div>
+            <div class="form-floating">
+              <select class="form-select" id="kids" aria-label="어린이 인원 체크">
+                <option selected value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>                
+              </select>
+              <label for="kids">어린이</label>
+            </div>
+          </div>
+          <div class="d-grid gap-2"><button type="button" class="btn btn-danger mb-4"><i class="bi bi-search"></i>검색</button></div>
+        </div>
+      </div>
+    </section>
+    <!-- 최고평점 -->
+    <section class="container mt-5">
+      <h3>최고 평점을 받은 한국의 휴가 숙소</h3>
+      <p class="text-muted">위치, 청결도 등에서 게스트의 높은 평가를 받은 숙소입니다.</p>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col">
+          <img class="img-fluid flex-shrink-0 rounded" src="assets/images/01.webp">
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Gyeongju-si의 집</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">황리단길 도보1분거리 조용한 곳</p>
+          <div class="text-truncate text-muted">1974년에 지어진 근대 도시한옥의 외관을 최대한 둔 채 내부는 편하게 쉴 수 있게 리모델링했습니다. 화려한 목재로 지어진 신식 한옥도 아니고 전통한옥도 아닙니다. 빨랫줄이 있는 창고 위의 작은 옥상, 툇마루 밑의 타일 장식, 디지털 도어록이 아닌 열쇠로 열고 닫는 철 대문, 하나같이 같은 모양의 서까래가 아닌 생긴 그대로의 육송으로 된 서까래를 보고 누워 있으면 마음이 참 편안해집니다.
+            이런 걸 즐기는 분들께 적극 추천합니다.</div>
+          
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/02.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Sindun-myeon, Icheon-si의 전원주택</p>
+            <p class="d-inline-block mb-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-warning bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg> <span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">서울 근교 이천시의 감성 힐링 숙소</p>
+          <div class="text-truncate text-muted">
+            이천 도자 예술촌에 위치한 통기타 모양의 전원 주택입니다. 자연과 매우 잘 어우러진 이천 도자 예술 마을에서 독특한 외관으로 유명한 세라 기타 문화관의 3층 테라스가 넓은 독채 집입니다.
+            아늑하고 따뜻한 방에서 여유로운 감성 힐링 휴가를 즐겨보세요. 높은 건물이 없는 마을의 3층 위치에서 탁 트인 자연 경관을 즐길 수도 있고, 통기타 집 앞에 위치한 잔디밭에서 피크닉을 즐길 수도 있습니다.
+          </div>
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/03.webp">
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Gangdong-myeon, Gangneung의 주택</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div> 
+          <p class="text-muted">하석재의 소소한 뜰</p>
+          <div class="text-truncate text-muted">호스트가 태어나기도 한 이곳은 150년의 세월을 간직한 전통 한옥입니다. 눈부신 아침과 따뜻한 오후,  그리고 편안한 저녁을 느낄 수 있는 곳입니다. 오시는 분들과 함께 나누고 싶습니다.</div>  
+        </div>
+      </div>
+    </section>
+
+    <!-- 인기 편의시설 -->
+    <section class="container mt-5">
+      <h3>한국의 휴가용 임대 숙소의 인기 편의시설</h3>
+      <div class="d-flex flex-wrap">
+        <div class="flex-grow-1 shadow mx-1 rounded"><div class="d-grid gap-2"><button type="button" class="btn btn-light"><i class="fa-solid fa-utensils"></i><br>주방</button></div></div>
+        <div class="flex-grow-1 shadow mx-1 rounded"><div class="d-grid gap-2"><button type="button" class="btn btn-light"><i class="bi bi-wifi"></i><br>무선 인터넷</div></div>
+        <div class="flex-grow-1 shadow mx-1 rounded"><div class="d-grid gap-2"><button type="button" class="btn btn-light"><i class="fa-solid fa-water-ladder"></i><br>수영장</div></div>
+        <div class="flex-grow-1 shadow mx-1 rounded"><div class="d-grid gap-2"><button type="button" class="btn btn-light"><i class="fa-solid fa-square-parking"></i><br>건물 내 무료 주차</div></div>
+        <div class="flex-grow-1 shadow mx-1 rounded"><div class="d-grid gap-2"><button type="button" class="btn btn-light"><i class="bi bi-snow"></i><br>에어컨</div></div>
+      </div>
+
+    </section>
+
+    <!-- 한국의 다른 근사한 휴가 숙소 -->
+    <section class="container mt-5">
+      <h3>한국의 다른 근사한 휴가 숙소</h3>
+      <div class="row row-cols-1 row-cols-md-4">
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded object-fit-cover" src="assets/images/04.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">중구의 개인실</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">NEW <span class="fs-6"></span></span>
+            </p>
+          </div>
+          <p class="text-muted">영종도 구읍뱃터 오션뷰 ‘데이지하우스’</p>
+          <div class="text-truncate text-muted">안녕하세요 영종도 '데이지하우스'를 운영하고 있는 호스트 Jiho 입니다.
+            여행을 다니며 저에게 가장 큰 힐링을 주는 공간은 숙소였어요.
+            편안한 잠자리와 커피 한 잔의 여유, 재밌는 영상을 시청하고 낭만적인
+            일출과 오션뷰를 보며  저의 숙소에서 소중한 추억을 쌓으셨으면
+            좋겠습니다.</div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/05.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">양평군의 집</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">전통한옥 단독주택 독체</p>
+          <div class="text-truncate text-muted">전통한옥 공법으로  잘지은 한옥독체입니다.
+            배산임수로 무엇보다 단지뒤 고래산자락 둘레길 21km 산책로가 너무너무 좋습니다.
+            제2영동고속도로 동여주ic3km위치하고 있어 판교까지 30분이내 진입,
+             일신역2km 중앙선 무궁화기치이용 청리리역 까지 50분정도 소요됩니다.</div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/06.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Cheomdangwahak-ro, Jeongeup-si의 돔하우스</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.87 <span class="fs-6">(322)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">꽃담원(꽃담아카데미)</p>
+          <div class="text-truncate text-muted">국립공원 내장산 구역안에 있는 송죽마을(구 솔티)의 꽃담아카데미 내에 있습니다. 2층 다락이 딸린 20m2의 내부공간(침실, 주방, 욕실)과 40m2의 목재데크가 있는 아치형 방갈로 형태의 독립주택입니다. 주변이 국립공원이라 반딧불이 서식하고 있고 앞개울 건너에 담비가 사는 최고의 자연환경을 유지하고 있습니다. 가족단위 휴식과 팀단위 MT에 적합하며 돔온실도 있어 30명 정도의 당일 워크샵도 가능합니다</div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/07.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Gyo-dong, Gyeongju의 전원주택</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.91 <span class="fs-6">(195)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">석등있는집 대감실 (200년 최부자고택)</p>
+          <div class="text-truncate text-muted">석등있는 집은 이백여년의 세월이 깃들은 우리나라의 전통 한옥으로써 여느 새로지은 한옥과는 다른 고택의 미를 간직하고있습니다.
+            이고택은 신라시대 궁궐 또는 절을 받치고있던 천년이 넘는 시간이 깃든 신라시대의 돌들위에 자리잡고있습니다.</div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/08.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">비자림 인근 신축 숙소</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">스테이 녹 음:綠陰</p>
+          <div class="text-truncate text-muted">스테이 녹 음:綠陰 은 비자림 인근 평대리에 위치한 숲세권 신축 숙소입니다. 바닷가인 세화리, 월정리와는 차로 10분, 중산간 송당리와도 10분 거리에요. 동쪽 여행하실 때 거점으로 삼기 좋습니다.
+            그리고, 비자림이 바로 옆에 있어서(비자림 입구까지 차로 5분, 도보로 10분), 사람 없는 아침에 비자림 산책 해보시는 것을 추천 드려요.</div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/09.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Gimsatgat-myeon, Yeongwol-gun의 독채</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">잠시나마 쉬고 싶을때 산과 숲을 바라보며 힐링할 수 있는 곳</p>
+          <div class="text-truncate text-muted">잠시나마 쉬고 싶을때 산과 숲을 바라보며 힐링할 수 있는 곳입니다.  도보 1분으로 산책로와 계곡과 강이 있습니다. 여름철에는 시원한 계곡에서 물놀이를 즐길수 있는 곳입니다. </div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/10.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">Gangneung의 전원주택</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.8 <span class="fs-6">(137)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">강릉애 진심 펜션</p>
+          <div class="text-truncate text-muted">단독주택의 삶을 한번쯤  로망하셨던분들이라면 꼭 한번 방문해보시길바래요. 단독주택 1층 독채로 사용. 2층- 팬션지킴이가 상주하고 있어요.</div>  
+        </div>
+        <div class="col">
+          <div class="ratio ratio-1x1">
+            <img class="flex-shrink-0 rounded" src="assets/images/11.webp">
+            <button type="button" class="btn btn-light position-absolute btn-sm mt-3 ms-3" style="width: 110px; height: 27px;">슈퍼호스트</button>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="d-inline-block mb-0">성북구의 집</p>
+            <p class="d-inline-block mb-0">
+              <i class="bi bi-star-fill"></i><span class="align-middle">4.99 <span class="fs-6">(89)</span></span>
+            </p>
+          </div>
+          <p class="text-muted">[Private] 독채한옥 SpaceMODA 한양도성 낙산공원 옆 오래된 골목 속 비밀정원</p>
+          <div class="text-truncate text-muted">1936년에 옛날 서울의 최초 택지개발지역으로 생겨난 옛날동네에 그 시절부터 있던 한옥을 새로 단장한 독채 한옥입니다. 지속가능한 여행을 꿈꾸는 Hanok MODA는 지역의 사람들이 생활하고 있는 모습</div>  
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e44509cf3a.js" crossorigin="anonymous"></script>
+</body>
+</html>
