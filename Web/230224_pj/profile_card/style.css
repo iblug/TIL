@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffeaee;
+    padding: 10px;
+    border: 2px solid red;
+    width: 700px;
+    text-align: center;
+    font-family: Dongle, sans-serif;
+    font-size: 30px;
+    line-height: 20px;
+}
+
+.box {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    margin: auto;
+    background-color: pink;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.content{
+    width: 35%;
+    text-align: left;
+    margin: auto;
+}
+
+li {
+    line-height: 30px;
+}
+
+ul {
+    width: 350px;
+    margin: auto;
+    padding-bottom: 35px;
+}
