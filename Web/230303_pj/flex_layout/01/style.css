@@ -1,0 +1,157 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* border: 1px solid black; */
+}
+.page__top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 밑줄 없애기 */
+a{
+text-decoration: none;
+}
+.home{
+display: inline-block;
+/* vertical-align: middle; */
+}
+.page__top-link{
+padding: 20px;
+}
+.page__top-name{
+display: inline-block;
+height: 100%;
+padding: 20px;
+}
+.page__top-name-1{
+/* display: inline-block; */
+font-size: 24px;
+text-align: center;
+}
+.page__top-name-2{
+/* display: inline-block; */
+}
+.logo{
+float: left;
+}
+.contents{
+display: flex;
+}
+.sidebar{
+flex-basis: 200px;
+/* flex-shrink: 100;
+flex-grow: 0; */
+padding: 20px;
+}
+.card-outline{
+/* height: 500px;
+width: 30%; */
+/* position:absolute; */
+/* right: 0; */
+/* top: 0; */
+/* float: right; */
+/* margin-left: auto; */
+/* order: 2; */
+}
+
+.main-article{
+  /* width: 70%; */
+}
+
+.main{
+/* display: inline-block; */
+flex-grow: 1;
+/* margin:20px; */
+}
+
+ul{
+padding-left: 20px;
+}
+h3{
+/* display: inline-block; */
+margin: 10px 0;
+}
+.main-content{
+  /* position: relative; */
+  /* float: left; */
+}
+
+/* 프로필 카드 */
+.content {
+  display: inline-block;
+  flex-wrap: wrap;
+}
+.article {
+  display: inline-block;
+  background-color: #4c6ea1;
+  border: 3px solid red;
+}
+.card-outline{
+  float: right;
+  background-color: #f5f5f5;
+  width: 400px;
+  margin: 7px;
+  padding: 10px;
+  border: 1px solid rgb(77, 77, 77);
+}
+
+.container{
+  background-color: #dcdcdc;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Tim{
+  position: relative;
+  width: 100%;
+}
+.flag{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+}
+
+.name{
+  color: #4c6ea1;
+  text-align: center;
+}
+
+.job{
+  color: gray;
+}
+.red{
+  color: red;
+  font-weight: bold;
+}
+.info{
+  border-top: 1px solid grey;
+  padding: 10px;
+}
+table {
+  border-spacing: 5px;
+  padding-top: 10px;
+  font-size: small;
+  height: max-content;
+
+}
+.table-left {
+  font-weight: bold;
+}
+p > span{
+  color: blue;
+}
+div p{
+  font-size: small;
+}
+
+.footer{
+    text-decoration-line: none;
+    text-align: center;
+}
