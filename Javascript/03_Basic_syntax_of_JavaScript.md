@@ -136,3 +136,207 @@ typeof undefined // "undefined"
   | null| 항상 false | X |
   | Number| 0, -0, NaN | 나머지 모든 경우 |
   | String | 빈 문자열 | 나머지 모든 경우 |
+
+# 4. 연산자
+## 할당 연산자
+* 오른쪽에 있는 피연산자의 평가 결과를 왼쪽 피연산자에 할당하는 연산자
+* 다양한 연산에 대한 단축 연산자 지원
+* Increment(`++`)
+  * 피연산자의 값을 1 증가시키는 연산자
+* Decrement(`--`)
+  * 피연산자의 값을 1 감소시키는 연산자
+* `+=` 또는 `-=`
+## 비교 연산자
+* 피연산자들(숫자, 문자, Boolean 등)을 비교하고 결과값을 boolean으로 반환하는 연산자
+```js
+3 > 2 // true
+3 < 2 // false
+
+'A' < 'B' // true
+'Z' < 'a' // true
+'가' < '나' // true
+```
+
+## 동등 연산자(==)
+* 두 피연산자가 같은 값으로 평가되는지 비교 후 boolean 값을 반환
+* 비교할 때 **암묵적 타입 변환** 통해 타입을 일치시킨 후 같은 값인지 비교
+* 두 피연산자가 모두 객체일 경우 메모리의 같은 객체를 바라보는지 판별
+* **에상치 못한 결과가 발생할 수 있으므로 특별한 경우를 제외하고 사용하지 않음**
+```js
+const a = 1
+const b = '1'
+
+console.log(a == b) // true
+console.log(a == true) // true
+
+// 자동 형변환 예시
+console.log(8 * null) // 0, null은 0
+console.log('5' - 1) // 4
+console.log('5' + 1) // '51'
+console.log('five' * 2) // NaN
+```
+
+## 일치 연산자(===)
+* 두 피연산자의 값과 타입이 모두 같은 경우 true를 반환
+* 같은 객체를 가리키거나, 같은 타입이면서 같은 값인지를 비교
+* 엄격한 비교가 이뤄지며 암묵적 타입 변환이 발생하지 않음
+```js
+const a = 1
+const b = '1'
+
+console.log(a === b) // false
+console.log(a === Number(b)) // true
+```
+
+## 논리 연산자
+* and 연산은 `&&` 연산자
+* or 연산은 `||` 연산자
+* not 연산은 `!` 연산자
+- 단축 평가 지원
+  * false&&true => false
+  * true||false => true
+
+# 5. 조건문
+## if
+* 조건 표현식의 결과값을 boolean 타입으로 변환 후 참/거짓을 판단
+* syntax
+  ```js
+  if (조건문) {
+    명령문
+  } else if (조건문) {
+    명령문
+  } else {
+    명령문
+  }
+  ```
+* 예시
+  ```js
+  const name = 'manager'
+  if (name === 'admin') {
+    console.log('관리자님 환영합니다.')
+  } else if (name === 'manager'){
+    console.log('매니저님 환영합니다.')      
+  } else {
+    console.log(`반갑습니다. ${name}님 환영합니다.`)
+  }
+  ```
+
+# 6. 반복문
+## 1. while
+* 조건문이 참이기만 하면 문장을 계속해서 수행
+* syntax
+  ```js
+  while (조건문) {
+    // do something
+  }
+  ```
+* 예시
+  ```js
+  let i = 0
+  while (i < 6) {
+    console.log(i)
+    i += 1
+  }
+  ```
+## 2. for
+* 특정한 조건이 거짓으로 판별될 때까지 반복
+* syntax
+  ```js
+  for ([초기문]; [조건문]; [증감문]) {
+    // do something
+  }
+  ```
+* 예시
+  ```js
+  for (let i = 0; i < 6; i++) {
+      console.log(i) // 0, 1, 2, 3, 4, 5
+    }
+  ```
+* 동작 원리
+  1. 반복문 진입 및 변수 i 선언
+  2. 조건문 평가 후 코드 블럭 실행
+  3. 코드 블록 실행 이후 i 값 증가
+
+## 3. for-in
+* **객체(object)의 속성을 순회**할 때 사용
+* syntax
+  ```js
+  for (variable in object) {
+    statements
+  }
+  ```
+* 예시
+  ```js
+  const fruits = {
+    a: 'apple',
+    b: 'banana'
+  }
+
+  for (const key in fruits) {
+    console.log(key) // a, b
+    console.log(fruits[key]) // apple, banana
+  }
+  ```
+* 배열도 순회 가능하지만 인덱스 순으로 순회한다는 보장이 없으므로 권장하지 않음
+## 4. for-of
+* **반복 가능한 객체(배열, 문자열 등)를 순회**할 때 사용
+* syntax
+  ```js
+  for (variable of object) {
+    statements
+  }
+  ```
+* 예시
+  ```js
+  const numbers = [0, 1, 2, 3]
+  const myStr = 'apple'
+
+  for (const number of numbers) {
+    console.log(number)
+  }
+
+  for (const str of myStr) {
+    console.log(str)
+  }
+  ```
+
+### for-in 과 for-of
+* for-in은 "속성 이름"을 통해 반복
+* for-of는 "속성 값"을 통해 반복
+  * 객체를 반복하려고 하면 TypeError 발생
+```js
+// Array
+const numbers = [10, 20, 30]
+// for-in (X)
+for (const number in numbers) {
+  console.log(number) // 0 1 2
+}
+// for-of (O)
+for (const number of numbers) {
+  console.log(number) // 10 20 30
+}
+```
+```js
+// Object
+const capitals = {
+  korea: '서울', 
+  france: '파리', 
+  japan: '도쿄'
+}
+// for-in (O)
+for (const capital in capitals) {
+  console.log(capital) // korea france japan
+}
+// for-of (X)
+for (const capital of capitals) {
+  console.log(capital) // TypeError: capital is not iterable
+}
+```
+
+### 반복문 정리
+| 키워드 | 연관 키워드 | 스코프 |
+|:-:|:-:|:-:|
+| while | break, continue | 블록 스코프 |
+| for | break, continue | 블록 스코프 |
+| for-in | object 순회 | 블록 스코프 |
+| for-of | iterable | 블록 스코프 |
