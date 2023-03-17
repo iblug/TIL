@@ -340,3 +340,85 @@ for (const capital of capitals) {
 | for | break, continue | 블록 스코프 |
 | for-in | object 순회 | 블록 스코프 |
 | for-of | iterable | 블록 스코프 |
+
+# 99.참고
+## 세미콜론
+* 자바스크립트는 세미콜론을 선택적으로 사용 가능
+* 세미콜론이 없으면 ASI에 의해 자동으로 세미콜론이 삽입됨
+  * ASI (Automatic Semicolon Insertion, 자동 세미콜론 삽입 규칙)
+
+## var
+* 재할당 가능 & 재선언 가능
+* ES6 이전에 변수를 선언할 때 사용되던 키워드
+* "호이스팅"되는 특성으로 인해 예기치 못한 문제 발생 가능
+  * 따라서 ES6 이후부터는 var 대신 const와 let을 사용하는 것을 권장
+* 함수 스코프(function scope)를 가짐
+* 변수 선언시 var, const, let 키워드 중 하나를 사용하지 않으면 자동으로 var로 선언됨
+
+## 함수 스코프 (function scope)
+* 함수의 중괄호 내부를 가리킴
+* 함수 스코프를 가지는 변수는 함수 바깥에서 접근 불가능
+```js
+function foo() {
+  var x = 5
+  console.log(x) // 5
+}
+
+// ReferenceError: x is not defined
+console.log(x)
+```
+
+## 호이스팅(hoisting)
+* 변수를 선언 이전에 참조할 수 있는 형상
+* var로 선언된 변수는 선언 이전에 참조할 수 있음
+* 변수 선언 이전의 위치에서 접근 시 undefined를 반환
+  ```js
+  console.log(name) // undefined
+
+  var name = '홍길동' // 선언
+  ```
+  * 위 코드를 암묵적으로 아래와 같이 이해
+  ```js
+  var name // undefined로 초기화
+  console.log(name)
+
+  var name = '홍길동'
+  ```
+* 즉, JavaScript에서 변수들은 실제 실행시에 코드의 최상단으로 끌어 올려지게 되며 (hoisting) 이러한 이유 때문에 var로 선언된 변수는 선언 시에 undefined로 값이 초기화되는 과정이 동시에 일어남
+* 반면 let, const는 호이스팅이 일어나면 에러를 발생시킴
+  ```js
+  // var
+  console.log(username) // undefined
+  var username = '홍길동'
+
+  // let
+  console.log(email) // Uncaught ReferenceError
+  let email = 'gildong@gmail.com'
+
+  // const
+  console.log(age) // Uncaught ReferenceError
+  const age = 50
+  ```
+
+## Template literals (템플릿 리터럴)
+* 내장된 표현식을 허용하는 문자열 작성 방식
+* ES6+ 부터 지원
+* Backtick(` `` `)을 이용하며, 여러 줄에 걸쳐 문자열을 정의할 수도 있고 JavaScript의 변수를 문자열 안에 바로 연결할 수 있는 이점이 생김
+* 표현식은 `$`와 중괄호(`${expression}`)로 표기
+```js
+const age = 10
+const message = `홍길동은 ${age}세입니다.`
+```
+
+## 반복문 사용 시 const 및 let
+* for 문
+  * for (let i = 0; i < arr.lenth; i++) { ... }의 경우에는 최초 정의한 i를 "재할당"하면서 사용하기 때문에 **const를 사용하면 에러 발생**
+* for-in, for-of
+  * 재할당이 아니라, 매 반복마다 다른 속성이름이 변수에 지정되는 것이므로 **const를 사용해도 에러가 발생하지 않음**
+
+## NaN을 반환하는 경우
+1. 숫자로서 읽을 수 없음 (Number(undefined))
+2. 결과가 허수인 수학 계산식 (Math.sqrt(-1))
+3. 피연산자가 NaN (7**NaN)
+4. 정의할 수 없는 계산식(0*infinity)
+5. 문자열을 포함하면서 덧셈이 아닌 계산식('가'/3)
