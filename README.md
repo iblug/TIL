@@ -7,6 +7,7 @@
 * [Algorithm](#algorithm)
 * [DB](#db)
 * [git](#git)
+* [JavaScript](#javasrcript)
 * [markdown](#markdown)
 * [Python](#python)
 * [Web](#web)
@@ -46,6 +47,14 @@
 * [github](/git/github.md)
 * [git flow](/git/git_flow.md)
 
+## [JavaSrcript](/Javascript/)
+* [History of Javascript](Javascript/01_History_of_Javascript.md)
+* [JavaScript and DOM](Javascript/02_JavaScript_and_DOM.md)
+* [Basic syntax of JavaScript](Javascript/03_Basic_syntax_of_JavaScript.md)
+* [Functions](Javascript/04_Functions.md)
+* [Object](Javascript/05_Object.md)
+* [Array](Javascript/06_Array.md)
+
 ## [markdown](/markdown/)
 * [markdown](markdown/markdown.md)
 
@@ -60,14 +69,17 @@
 * [Python 08](/Python/Python_08.md)
 * [Python 09](/Python/Python_09.md)
 
-## [Web](Web)
+## [Web (HTML & CSS)](Web)
 * [Fundamentals of HTML and CSS](Web/01_Web-Fundamentals_of_HTML_and_CSS.md)
 * [The box model](Web/02_Web-The_box_model.md)
 * [Positioning for CSS layout](Web/03_Web-Positioning_for_CSS_layout.md)
 * [Floating for CSS layout](Web/04_Web-Floating_for_CSS_layout.md)
 * [Flexible box for CSS layout](Web/05_Web-Flexible_box_for_CSS_layout.md)
 * [Semantic Web](Web/06_Web-Semantic_Web.md)
-
+* [Fundamentals of Bootstrap](Web/07_Web-Fundamentals_of_Bootstrap.md)
+* [Fundamentals of Grid system](Web/08_Web-Fundamentals_of_Grid_system.md)
+* [Grid system for responsive web design](Web/09_Web-Grid_system_for_responsive_web_design.md)
+* [UX & UI](Web/99_Web-UX_and_UI.md)
 
 [🔝](#📖today-i-learned)
 
