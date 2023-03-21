@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .blue {
+      color: lightblue;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1></h1>
+  <button id="btn">클릭</button>
+  <input type="text" id="text-input">
+
+  <script>
+    const hTag = document.querySelector('h1')
+    const input = document.querySelector('#text-input')
+    // console.log(input)
+    const btn = document.querySelector('#btn')
+
+    input.addEventListener('input', (event) => {
+      // console.log('input!')
+      console.log(event.target.value)
+      hTag.textContent = event.target.value
+    })
+
+    btn.addEventListener('click', () => {
+      // 1. toggle
+      // hTag.classList.toggle('blue')
+
+      // 2. if...add
+      if (hTag.classList.value) {
+        hTag.classList.remove('blue')
+      } else {
+        hTag.classList.add('blue')
+      }
+
+      // 3. if in...add
+    })
+
+
+  </script>
+
+</body>
+
+</html>
