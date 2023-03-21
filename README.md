@@ -6,6 +6,7 @@
 
 * [Algorithm](#algorithm)
 * [DB](#db)
+* [Django](#django)
 * [git](#git)
 * [JavaScript](#javasrcript)
 * [markdown](#markdown)
@@ -42,6 +43,8 @@
 * [SQL-Advanced](Database/09-1_SQL-Advanced.md)
 * [Normalization & Data Modeling](Database/09-2_SQL-Advanced.md)
 
+## [Django]
+
 ## [git](/git/)
 * [git](/git/git.md)
 * [github](/git/github.md)
@@ -54,6 +57,7 @@
 * [Functions](Javascript/04_Functions.md)
 * [Object](Javascript/05_Object.md)
 * [Array](Javascript/06_Array.md)
+* [Controlling event](Javascript/07_Controlling_event.md)
 
 ## [markdown](/markdown/)
 * [markdown](markdown/markdown.md)
