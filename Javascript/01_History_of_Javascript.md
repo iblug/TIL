@@ -60,3 +60,15 @@
 * 2009년에는 ECMAScript 5(ES5)에서 안정성과 생산성을 크게 높임
 * 2015년에는 ECMAScript 2015(ES6)에서 객체 지향 프로그래밍 언어로써 많은 발전을 이루어, 역사상 가장 중요한 버전으로 평가됨
 * JavaScript는 ECMAScript의 구현 언어 중 하나
+
+# 99. 참고
+## 추가 공부 참고
+### 온라인
+[[MDN]JavaScript](https://developer.mozilla.org/ko/docs/Web/JavaScript)
+[[MDN]JavaScript - 동적인 클라이언트 사이드 스크립트 언어](https://developer.mozilla.org/ko/docs/Learn/JavaScript)
+[모던 JavaScript 튜토리얼](https://ko.javascript.info/)
+
+### 서적
+* 자바스크립트 완벽 가이드
+* 자바스크립트는 왜 그 모양일까?
+* 모던 자바스크립트 Deep dive
