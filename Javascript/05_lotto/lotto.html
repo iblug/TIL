@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>lotto</title>
+  <style>
+    .box {
+      width: 80px;
+      height: 80px;
+      border: solid black 2px;
+      border-radius: 100% 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container postion-relative">
+    <div class="fixed-bottom row">
+      <div class="col-5 offset-1">
+        <p id="tryNum" class="fs-4 fw-bold"></p>
+      </div>
+      <button class="btn btn-primary btn-lg col-4 offset-1" id="getNum" type="submit">생성</button>
+    </div>
+    <div class="header title h1 text-center m-5">로또 시뮬레이터</div>
+    <div class="main">
+
+      <hr>  
+      
+      <div class="mb-5 pb-3" id="lottoSet">
+        <!-- 결과값 들어가는 곳 -->
+      </div>
+    </div>
+    
+  </div>
+  
+
+  <script>
+    const getNumBtn = document.querySelector('#getNum')
+    const getLottoSet = document.querySelector('#lottoSet')
+    const winNum = [11, 12, 13, 14, 15, 16]
+    const bonusNum = 10
+    const tryNum = document.querySelector('#tryNum')
+
+    // 순위 판별 함수
+    const result = (arr) => {
+      let c = 0
+      arr.map(i => {
+        if (winNum.includes(i)) {
+          c += 1
+        }
+      })
+      if (c === 6) {
+        winCount += 1
+        return '1등'
+      } else if (c === 5) {
+        if (arr.includes(bonusNum)) {
+          winCount += 1
+          return '2등'
+        } else {
+          winCount += 1
+          return '3등'
+        }
+      } else if (c === 4) {
+        winCount += 1
+        return '4등'
+      } else if (c === 3) {
+        winCount += 1
+        return '5등'
+      } else {
+        return '꽝'
+      }
+    }
+    
+    // 생성 이벤트
+    let cnt = 0
+    let winCount = 0
+    getNumBtn.addEventListener('click', (event) => {
+      cnt += 1
+      tryNum.textContent = `시행 횟수: ${cnt} 당첨 횟수: ${winCount}`
+      const nums = _.range(1, 46)
+      const sixNums = _.sampleSize(nums, 6)
+      sixNums.sort(function(a, b) {
+        return a - b
+      })
+      
+      const ulTag = document.createElement('ul')
+      ulTag.classList.add('list-unstyled', 'd-flex', 'justify-content-between')
+      sixNums.forEach(i => {
+        const newLi = document.createElement('li')
+
+        newLi.classList.add('inline-block', 'box', 'text-center', 'pt-3', 'fs-3', 'fw-bold', 'mx-1', 'text-white')
+        
+        // 숫자에 따른 if문
+        if (1 <= i && i <= 10) {
+          newLi.classList.add('bg-warning', 'border-warning')
+        } else if (11 <= i && i <= 20) {
+          newLi.classList.add('bg-info', 'border-info')
+        } else if (21 <= i && i <= 30) {
+          newLi.classList.add('bg-danger', 'border-danger')
+        } else if (31 <= i && i <= 40) {
+          newLi.classList.add('bg-secondary', 'border-secondary')
+        } else {
+          newLi.classList.add('bg-success', 'border-success')
+        } 
+
+        newLi.textContent = i
+        ulTag.appendChild(newLi)
+      });
+
+      const newLi = document.createElement('li')
+      newLi.classList.add('inline-block', 'box', 'text-center', 'pt-3', 'fs-3', 'fw-bold', 'text-danger', 'mx-1')
+      newLi.textContent = result(sixNums)
+      ulTag.appendChild(newLi)
+ 
+      
+      getLottoSet.appendChild(ulTag)
+
+      window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
+    })
+    
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
