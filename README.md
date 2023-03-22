@@ -43,7 +43,9 @@
 * [SQL-Advanced](Database/09-1_SQL-Advanced.md)
 * [Normalization & Data Modeling](Database/09-2_SQL-Advanced.md)
 
-## [Django]
+## [Django](Django)
+* [guide and Settings](Django/setting_guide)
+* [Understanding Django and framework](Django/01_Understanding_Django_and_framework.md)
 
 ## [git](/git/)
 * [git](/git/git.md)
