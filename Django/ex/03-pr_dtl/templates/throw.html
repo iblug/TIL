@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Throw</h1>
+<form action="/catch/" method="GET">
+  <input type="text" class="form-control w-25 d-inline" name="content">
+  <button type="submit" class="btn btn-outline-primary">Throw</button>
+</form>
+{% endblock content %}
