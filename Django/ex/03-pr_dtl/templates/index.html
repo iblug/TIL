@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>hello</h1>
+<ol>
+  {% comment %} <li><a href="{% url 'today_dinner' %}">today_dinner</a></li> {% endcomment %}
+  {% comment %} <li><a href="{% url 'throw' %}">throw</a></li> {% endcomment %}
+  {% comment %} <li><a href="{% url 'lotto_create' %}">lotto_create</a></li> {% endcomment %}
+  <li><a href="/today-dinner/">today_dinner</a></li>
+  <li><a href="/throw/">throw</a></li>
+  <li><a href="/lotto-create/">lotto_create</a></li>
+</ol>
+{% endblock content %}

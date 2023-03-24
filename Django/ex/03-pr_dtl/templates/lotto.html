@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>lotto number</h1>
+  {% for sixnum in sixnums %}
+    <p>{{ sixnum }}</p>
+  {% endfor %}
+
+  {% comment %} <p><a href="{% url 'lotto_create' %}">뒤로가기</a></p> {% endcomment %}
+  <p><a href="/lotto-create/">뒤로가기</a></p>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>lotto create</h1>
+<form action="/lotto/" method="GET">
+  <input type="number" class="form-control w-25 d-inline" name="count">
+  <button type="submit" class="btn btn-outline-primary">생성</button>
+</form>
+{% endblock content %}
