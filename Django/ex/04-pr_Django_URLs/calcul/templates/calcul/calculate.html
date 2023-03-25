@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Calculate_{{ num1 }}_{{ num2 }}{% endblock title %}
+
+{% block content %}
+<h1>Calculate <span class="text-danger">{{ num1 }} {{ num2 }}</span></h1>
+
+<h3>더하기 : {{ plus }}</h3>
+<h3>빼기 : {{ minus }}</h3>
+<h3>곱하기 : {{ multiply }}</h3>
+<h3>몫 : {{ divide }}</h3>
+
+<p><a href="{% url 'calcul:index' %}">calcul-index</a></p>
+{% endblock content %}

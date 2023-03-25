@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Catch{% endblock title %}
+
+{% block content %}
+<h1>Catch</h1>
+<h2><span class="text-danger">{{ message }}</span>를 받았습니다.</h2>
+<p><a href="{% url 'tc:throw' %}">throw</a></p>
+{% endblock content %}

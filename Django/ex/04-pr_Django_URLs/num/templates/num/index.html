@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Num-Index{% endblock title %}
+
+{% block content %}
+<h1>Num-Index</h1>
+<ul>
+  <li><a href="{% url 'num:np' 1 %}">1</a></li>
+  <li><a href="{% url 'num:np' 2 %}">2</a></li>
+  <li><a href="{% url 'num:np' 3 %}">3</a></li>
+  <li><a href="{% url 'num:np' 999 %}">999</a></li>
+</ul>
+{% endblock content %}
