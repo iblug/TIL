@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<h1>Django URLs</h1>
+<ol>
+  <li><a href="{% url 'tc:throw' %}">Throw &amp; Catch</a></li>
+  <li><a href="{% url 'num:index' %}">숫자 그대로 출력</a></li>
+  <li><a href="{% url 'calcul:index' %}">숫자 2개 연산</a></li>
+</ol>
+{% endblock content %}

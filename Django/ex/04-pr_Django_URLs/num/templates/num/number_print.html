@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Print_{{ number }}{% endblock title %}
+
+{% block content %}
+<h1>print</h1>
+<h3><span class="text-danger">{{ number }}</span>를 print했습니다.</h3>
+<p><a href="{% url 'num:index' %}">index</a></p>
+{% endblock content %}
