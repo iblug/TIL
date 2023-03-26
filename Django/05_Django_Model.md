@@ -148,7 +148,7 @@
   $ python manage.py showmigrations
   ```
   * migrations 파일들의 migrate 여부 확인
-  * \[X\] 표시가 있으면 migrate가 완료되었음을 의미
+  * \[X<area>] 표시가 있으면 migrate가 완료되었음을 의미
 * sqlmigrate
   ```console
   $ python manage.py sqlmigrate articles 0001
