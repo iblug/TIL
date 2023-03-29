@@ -51,6 +51,8 @@ len(Newspaper.objects.filter(created_at__gt='2000-01-01'))
 date = timezone.datetime(2000, 1, 1, tzinfo=timezone.utc)
 len(Newspaper.objects.filter(created_at__gt=date))
 
+Newspaper.objects.filter(created_at__gt=datetime.datetime(2000,1,1,tzinfo=timezone.utc))
+
 """
 8. 마지막 단일 데이터의 title, content, journalist 필드를 조회하고 아래와 같은 형식으로 출력
 답
