@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block main %}
+  <h1>할 일 생성!!</h1>
+  <p><a href="{% url 'todos:index' %}" class="btn btn-outline-success">목록</a></p>
+  <p><a href="{% url 'todos:new' %}" class="btn btn-outline-success">할 일 생성</a></p>
+{% endblock main %}
