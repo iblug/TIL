@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block main %}
+  <h1>{{ todo.title }}</h1>
+  <p>{{ todo.content }}</p>
+  <p>우선순위: {{ todo.priority }}</p>
+  <p>마감 기한: {{ todo.deadline }}</p>
+  <p>완료 여부: {{ todo.completed }}</p>
+  <a href="{% url 'todos:index' %}" class="btn btn-outline-success">목록</a>
+{% endblock main %}

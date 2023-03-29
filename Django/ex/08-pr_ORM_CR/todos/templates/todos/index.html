@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block main %}
+  <h1>할 일 전체 조회</h1>
+  <p><a href="{% url 'todos:new' %} " class="btn btn-outline-success">할 일 생성</a></p>
+  <hr>
+  {% for todo in todos %}
+    <p>
+      <a href="{% url 'todos:detail' todo.pk %}">{{ todo.title }}</a>
+    </p>
+    <hr>
+  {% endfor %}
+{% endblock main %}

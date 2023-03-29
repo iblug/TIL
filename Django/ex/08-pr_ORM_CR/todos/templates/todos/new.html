@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block main %}
+  <h1>New</h1>
+  <form action="{% url 'todos:create' %}" method="GET">
+    <div>
+      <label for="title">제목 : </label>
+      <input type="text" name="title" id="title">
+    </div>
+    <div>
+      <label for="content">내용 : </label>
+      <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="priority">우선 순위 : </label>
+      <input type="number" name="priority" id="priority" value=3>
+    </div>
+    <div>
+      <label for="deadline">마감기한 : </label>
+      <input type="date" name="deadline" id="deadline">
+    </div>
+    <button type="submit" class="btn btn-outline-primary">생성</button>
+    {% comment %} <input type="submit"> {% endcomment %}
+  </form>
+  <p><a href="{% url 'todos:index' %}" class="btn btn-outline-success">목록</a></p>
+{% endblock main %}
