@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+  <h1>할 일 목록</h1>
+  <p><a href="{% url 'todos:new' %}" class="btn btn-outline-success">생성</a></p>
+  <hr>
+  {% for todo in todos %}
+    <p>
+      <a href="{% url 'todos:detail' todo.pk %}">{{ todo.title }}</a><br>
+        완료 상태 - {{ todo.completed }}
+       
+      <a href="{% url 'todos:done' todo.pk %}">
+        {% if todo.completed %}
+        완료 취소
+        {% else %}
+        완료 하기
+        {% endif %}</a>
+      </p>
+    <hr>
+  {% endfor %}
+</div>
+{% endblock main %}
