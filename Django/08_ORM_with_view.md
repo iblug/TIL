@@ -1,4 +1,4 @@
-a# ORM with view
+# ORM with view
 ## 목차
 1. 사전 준비
 2. READ
