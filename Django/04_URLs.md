@@ -1,4 +1,4 @@
-a# Django URLs
+# Django URLs
 ## 목차
 1. 개요
 2. 변수와 URL
