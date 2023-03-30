@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+  <h1>New</h1>
+  <form action="{% url 'todos:create' %}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="title" class="form-label">할 일 제목</label>
+      <input type="text" name="title" id="title" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">할 일 내용</label>
+      <textarea class="form-control" name="content" id="content" cols="30" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="priority" class="form-label">우선순위</label>
+      <input type="number" name="priority" id="priority" class="form-control" value=3>
+    </div>
+    <div class="mb-3">
+      <label for="deadline" class="form-label">마감 기한</label>
+      <input type="date" name="deadline" id="deadline" class="form-control">
+    </div>
+    <input type="submit" class="btn btn-outline-primary">
+    <a href="{% url 'todos:index' %}" class="btn btn-danger">목록</a>
+</div>
+</form>
+{% endblock main %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+  <h1>{{ todo.title }}</h1>
+  <p>내용 - {{ todo.content }}</p>
+  <p>우선순위 - {{ todo.priority }}</p>
+  <p>마감 기한 - {{ todo.deadline }}</p>
+  <p>완료 여부 - {{ todo.completed }}</p>
+  <div>
+    <a href="{% url 'todos:index' %}" class="btn btn-success">목록</a>
+  </div>
+  <div>
+    <a href="{% url 'todos:edit' todo.pk %}" class="btn btn-warning">수정</a>
+  </div>
+
+  <form action="{% url 'todos:delete' %}" method="POST">
+    {% csrf_token %}
+    <div>
+      <input type="hidden" name='pk' value={{ todo.pk }}>
+      <input type="submit" value="DELETE" class="btn btn-danger">
+    </div>
+  </form>
+
+</div>
+{% endblock main %}
