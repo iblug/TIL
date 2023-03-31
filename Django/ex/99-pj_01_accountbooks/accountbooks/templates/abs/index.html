@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet">
+  <title>AccountBooks</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    
+    body {
+      margin: 1rem 1.5rem;
+      width: 50%;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    p, h1 {
+      margin: 0;
+    }
+
+    span {
+      padding: 0.6rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .date {
+      font-size: 0.8rem;
+
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Index</h1>
+  <a href="{% url 'abs:new' %}" class="btn btn-outline-primary my-3">가계부 작성</a>
+  <form method="GET">
+    {% comment %} 정렬 {% endcomment %}
+    <div class="mb-3">
+      <label for="sort" class="form-label">정렬 기준</label>
+      <select class="w-50 form-select" id="sort" name="sort">
+        <option selected>정렬 기준 선택</option>
+        <option {% if sort == 'pk' %}selected{% endif %} value="pk">입력 순서(오래된순)</option>
+        <option {% if sort == 'pk_desc' %}selected{% endif %} value="pk_desc">입력 순서(최신순)</option>
+        <option {% if sort == 'amount' %}selected{% endif %} value="amount">사용 금액(오름차순)</option>
+        <option {% if sort == 'amount_desc' %}selected{% endif %} value="amount_desc">사용 금액(내림차순)</option>
+        <option {% if sort == 'date_desc' %}selected{% endif %} value="date_desc">사용 날짜(최신순)</option>
+        <option {% if sort == 'date' %}selected{% endif %} value="date">사용 날짜(오래된순)</option>
+      </select>
+    </div>
+    {% comment %} 조회 {% endcomment %}
+    <div class="mb-3">
+      <label for="choice" class="form-label">분류</label>
+      <select class="w-50 form-select" id="choice" name="choice">
+        <option selected>카테고리 선택</option>
+        <option value="all">전체</option>
+        <option {% if choice == '식비' %}selected{% endif %} value="식비">식비</option>
+        <option {% if choice == '카페' %}selected{% endif %} value="카페">카페</option>
+        <option {% if choice == '교통비' %}selected{% endif %} value="교통비">교통비</option>
+        <option {% if choice == '문화생활' %}selected{% endif %} value="문화생활">문화생활</option>
+        <option {% if choice == '의류' %}selected{% endif %} value="의류">의류</option>
+      </select>
+    </div>
+    <input type="submit" class="btn btn-outline-primary" value="적용">
+  </form>
+
+  <h3 class="fw-bold my-4">총 지출 {{ sum }}원</h3>
+  <hr>
+  {% for ab in abs %}
+  <div class="d-flex align-items-center my-4">
+    {% if ab.category == '식비' %}
+    <span class="material-icons-outlined me-4 bg-primary-subtle rounded-circle">
+      restaurant
+      </span>
+    {% elif ab.category == '카페' %}
+    <span class="material-icons-outlined me-4 bg-success-subtle rounded-circle">
+      local_cafe
+      </span>
+    {% elif ab.category == '교통비' %}
+    <span class="material-icons-outlined me-4 bg-warning-subtle rounded-circle">
+      directions_bus_filled
+      </span>
+    {% elif ab.category == '문화생활' %}
+    <span class="material-icons-outlined me-4 bg-dark-subtle rounded-circle">
+      sports_esports
+      </span>
+    {% elif ab.category == '의류' %}
+    <span class="material-icons-outlined me-4 bg-danger-subtle rounded-circle">
+      checkroom
+      </span>
+    {% endif %}
+    <div>  
+      <p class="date text-body-secondary">{{ ab.date|date:'Y-m-d' }}</p>
+      <p class="note"><a href="{% url 'abs:detail' ab.pk %}">{{ ab.note }}</a></p>
+      <p class="amount">{{ ab.amount }}원</p>
+    </div>
+  </div>
+  <hr>
+  {% endfor %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
