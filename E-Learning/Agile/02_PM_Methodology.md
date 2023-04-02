@@ -50,6 +50,15 @@
 # 2. 애자일 지식의 발전 과정
 
 
+# 99. 정리
+* 프로젝트의 범위가 명확할 때 예측형(Predictive) 프로젝트 관리 방법론을 적용
+* 프로젝트 범위의 변경 가능성과 불확실성이 크고 창의적인 구현을 필요로 할 때 적응형(Adaptive) 프로젝트 관리 방법론을 적용
+* PMBOK은 전세계적으로 가장 많이 알려진 프로젝트 관리 방법론의 Global Standard
+* PMBOK은 애자일(Agile), 예측형(Predictive), 하이브리드(Hybrid) 등 다양한 방법론을 유연하게 적용하여 프로젝트를 성공적으로 완수할 수 있는 가장 포괄적인 지식 체계를 제공
+* Agile Practice Guide는 Procject Management Institute(PMI)와 Agile Alliance의 현업으로 개발
+* PRINCE2 Agile은 Scrum에 초점을 맞추고 있음
+* 스크럼 가이드(Scrum Guide)는 스크럼 실천을 위한 방법론이며, 스크럼의 창시자인 제프 서덜랜드(Jeff Sutherland)와 슈왜버(Ken Schwaber)가 개발
+
 # 99. Summary
 * 프로젝트 범위의 변경 가능성과 불확실성이 크고 창의적인 구현을 필요로 할 때 적용함.
 * 프로젝트 전 단계에 걸쳐 요구사항을 계속 추가하며, 문서 격식주의를 최소화하고 개발 단계에서 개발자 중심으로 프로젝트 작업을 진행함.
