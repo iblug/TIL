@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ todo.title }} - detail{% endblock title %}
+{% block main %}
+<h1>제목 : {{ todo.title }}</h1>
+<p>내용 : {{ todo.content }}</p>
+<p>작성 시각 : {{ todo.created_at }}</p>
+<p>마감 기한 : {{ todo.deadline }}</p>
+<hr>
+<p><a href="{% url 'todos:index' %}">[index]</a></p>
+<form action="{% url 'todos:delete' todo.pk %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="삭제">
+</form>
+<p><a href="{% url 'todos:update' todo.pk %}">[update]</a></p>
+{% endblock main %}

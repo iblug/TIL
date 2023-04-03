@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}index{% endblock title %}
+{% block main %}
+<h1>INDEX</h1>
+<h2><a href="{% url 'todos:create' %}">할 일 생성</a></h2>
+<hr>
+{% for todo in todos %}
+<p><a href="{% url 'todos:detail' todo.pk %}">{{ todo.title }}</a></p>
+<hr>
+{% endfor %}
+{% endblock main %}
