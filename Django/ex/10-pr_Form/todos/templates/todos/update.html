@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ todo.title }} - update{% endblock title %}
+{% block main %}
+<h1>UPDATE</h1>
+<form action="{% url 'todos:update' todo.pk%}" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit">
+</form>
+<hr>
+<p><a href="{% url 'todos:detail' todo.pk %}">[back]</a></p>
+<p><a href="{% url 'todos:index' %}">[index]</a></p>
+{% endblock main %}
