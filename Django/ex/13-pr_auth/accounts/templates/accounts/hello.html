@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>Hello!!</h1>
+<p>{{ user }}</p>
+
+{% comment %} {% if user.is_authenticated %}
+<p>{{ user }}</p>
+{% else %}
+<p>GEST</p>
+{% endif %} {% endcomment %}
+
+<a href="{% url 'accounts:login' %}">[Login]</a>
+<form action="{% url 'accounts:logout' %}">
+  {% csrf_token %}
+  <input type="submit" value="Logout">
+</form>
+{% endblock main %}
