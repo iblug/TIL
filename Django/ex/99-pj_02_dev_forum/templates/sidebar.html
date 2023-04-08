@@ -1,0 +1,14 @@
+<div class="sidebar bg-body-tertiary px-3">
+  <div class="text-center">
+    <span class="fs-3"><a href="{% url 'posts:index' %}">IT 정보 공유</a></span>
+    <hr>
+  </div>
+  
+  <ul id='sidebar'>
+    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:create' %}">글 작성</a></li>
+    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:index' %}">모든 글</a></li>
+    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:category' '개발' %}">개발</a></li>
+    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:category' 'CS' %}">CS</a></li>
+    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:category' '신기술' %}">신기술</a></li>
+  </ul>
+</div>

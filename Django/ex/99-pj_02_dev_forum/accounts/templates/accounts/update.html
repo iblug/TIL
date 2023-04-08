@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock style %}
+
+{% block content %}
+  <div class="d-flex flex-column mt-5">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">프로필 편집</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
+      </li>
+    </ul>
+
+    <div class="border p-5">
+      <form action="{% url 'accounts:update' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+          {{ field }}
+        </div>
+        {% endfor %}
+        <div class="text-end">
+          <input class="btn btn-primary" type="submit" value="수정">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
