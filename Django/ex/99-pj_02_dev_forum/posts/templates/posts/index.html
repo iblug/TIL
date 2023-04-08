@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block style %}
+#head > span {
+  font-weight: bold;
+}
+{% endblock style %}
+
+{% block content %}
+<div id="head" class="row mb-3">    
+  <span class="col-1">카테고리</span>
+  <span class="col-9 text-center">제목</span>
+  <span class="col-2 text-end">작성일</span>
+</div>
+  {% for post in posts %}
+  <div class="row">
+    <span class="col-1"><a href="{% url 'posts:category' post.category %}">{{ post.category }}</a></span>
+    <span class="col-9"><a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a></span>
+    {% if today == post.created_at|date:'Y-m-d' %}
+    <span class="col-2 text-end">{{ post.created_at|date:'H:i' }}</span>
+    {% else %}
+    <span class="col-2 text-end">{{ post.created_at|date:'Y-m-d' }}</span>
+    {% endif %}
+  </div>
+  <hr>
+  {% endfor %}
+{% endblock content %}

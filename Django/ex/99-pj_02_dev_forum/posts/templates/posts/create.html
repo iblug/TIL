@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock style %}
+
+{% block content %}
+<form action="{% url 'posts:create' %}" method="POST">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+    {{ field }}
+  </div>
+  {% endfor %}
+  <div class="text-end">
+    <input class="btn btn-primary" type="submit" value="생성">
+  </div>
+</form>
+{% endblock content %}
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock style %}
+
+{% block content %}
+  <div>
+    <form action="{% url 'accounts:login' %}" method="POST">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+        {{ field }}
+      </div>
+      {% endfor %}
+      <input type="hidden" name="next" value="{{ request.GET.next }}">
+      <div class="text-end">
+        <input class="btn btn-primary" type="submit" value="로그인">
+      </div>
+    </form>
+  </div>
+{% endblock content %}
