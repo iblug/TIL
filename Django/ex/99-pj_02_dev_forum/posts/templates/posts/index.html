@@ -7,21 +7,77 @@
 {% endblock style %}
 
 {% block content %}
-<div id="head" class="row mb-3">    
+
+<!-- 정렬 -->
+<form method="GET">
+  <div class="d-flex justify-content-end align-items-center gap-1 mb-2">
+    <select name="select_sorting" id="select_sorting" class="p-1 rounded-1">
+      <option value="최신순" {% if select_sorting == '최신순' %}selected{% endif %}>최신순</option>
+      <option value="오래된순" {% if select_sorting == '오래된순' %}selected{% endif %}>오래된순</option>
+    </select>
+    <input type="submit" class="btn btn-secondary btn-sm" value="정렬">
+  </div>
+</form>
+
+<!-- 게시판 -->
+<div id="head" class="row mb-3">
   <span class="col-1">카테고리</span>
   <span class="col-9 text-center">제목</span>
   <span class="col-2 text-end">작성일</span>
 </div>
+  <!--공지 글-->
+  
   {% for post in posts %}
-  <div class="row">
+    {% if post.notice %}
+    <div class="row bg-body-secondary py-2 border-top border-bottom">
+      <div class="col-1"><a class="rounded-3 border border-danger p-1 text-danger bg-danger-subtle" href="{% url 'posts:category' post.category %}">공지</a></div>
+      <span class="col-9"><a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a></span>
+      
+      {% now "Y-m-d" as today %}
+      {% if today == post.created_at|date:'Y-m-d' %}
+        {% if post.is_new %}
+        <span class="col-1 text-end new">new</span>
+        <span class="col-1 text-end">{{ post.created_at|date:'H:i' }}</span>
+        {% else %}
+        <span class="col-2 text-end">{{ post.created_at|date:'H:i' }}</span>
+        {% endif %}
+      {% else %}
+        <span class="col-2 text-end">{{ post.created_at|date:'Y-m-d' }}</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+  
+  <!--일반 글-->
+  {% for post in posts %}
+  {% if not post.notice %}
+  <div class="row py-2 border-top border-bottom">
     <span class="col-1"><a href="{% url 'posts:category' post.category %}">{{ post.category }}</a></span>
     <span class="col-9"><a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a></span>
+    
+    {% now "Y-m-d" as today %}
     {% if today == post.created_at|date:'Y-m-d' %}
-    <span class="col-2 text-end">{{ post.created_at|date:'H:i' }}</span>
+      {% if post.is_new %}
+      <span class="col-1 text-end new">new</span>
+      <span class="col-1 text-end">{{ post.created_at|date:'H:i' }}</span>
+      {% else %}
+      <span class="col-2 text-end">{{ post.created_at|date:'H:i' }}</span>
+      {% endif %}
     {% else %}
-    <span class="col-2 text-end">{{ post.created_at|date:'Y-m-d' }}</span>
+      <span class="col-2 text-end">{{ post.created_at|date:'Y-m-d' }}</span>
     {% endif %}
   </div>
-  <hr>
+  {% endif %}
   {% endfor %}
+
+  <script>
+    const newElements = document.querySelectorAll('.new')
+  
+    newElements.forEach((el) => {
+      setInterval(() => {
+        el.classList.toggle('text-danger')
+      }, 800)
+    })
+  </script>
 {% endblock content %}
+

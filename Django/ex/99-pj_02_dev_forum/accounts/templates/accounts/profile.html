@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block style %}
+  #profile-img {
+    width: 10rem;
+    height: 10rem;
+  }
+  img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+  #detail {
+    width: 40rem;
+  }
+{% endblock style %}
+
+{% block content %}
+<div class='d-flex flex-column align-items-center mt-5'>
+  <div class="mb-5">
+    <div id="profile-img" class="border rounded-circle position-relative">
+      <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg" alt="" class="rounded-circle position-absolute top-50 start-50 translate-middle" style="width: 10rem; height: 10rem;">
+    </div>
+  </div>
+
+  <div>
+    <div class="d-flex justify-content-end">
+      <div>
+        <a class="dropdown-item" href="{% url 'accounts:update' %}">
+          <div class="d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <i class="bi bi-pencil-square"></i>
+            </svg>
+            <span>프로필 편집</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <table id="detail" class="table">    
+      <tbody>
+        <tr>
+          <th scope="row">유저 이름</th>
+          <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+          <th scope="row">이메일</th>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+          <th scope="row">성</th>
+          <td>{{ user.last_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">이름</th>
+          <td>{{ user.first_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">생년월일</th>
+          <td>{{ user.birthday }}</td>
+        </tr>
+        <tr>
+          <th scope="row">마지막 로그인</th>
+          <td>{{ user.last_login }}</td>
+        </tr>
+        <tr>
+          <th scope="row">가입일</th>
+          <td>{{ user.date_joined }}</td>
+        </tr>
+        <tr>
+          <td class="border-0"></td>
+          <td class="border-0">
+            <div class="text-end">
+              <form action="{% url 'accounts:delete' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">회원탈퇴</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+    
+
+{% endblock content %}  

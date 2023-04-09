@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+
+# 로그인
 def login(request):
     if request.user.is_authenticated:
         return redirect('posts:index')
@@ -25,12 +27,15 @@ def login(request):
     }
     return render(request, 'accounts/login.html', context)
 
+
+# 로그아웃
 @login_required
 def logout(request):
     auth_logout(request)
     return redirect('posts:index')
 
 
+# 회원 가입
 def signup(request):
     if request.user.is_authenticated:
         return redirect('posts:index')
@@ -47,6 +52,8 @@ def signup(request):
     }
     return render(request, 'accounts/signup.html', context)
 
+
+# 회원 정보 변경
 @login_required
 def update(request):
     if request.method == 'POST':
@@ -61,12 +68,16 @@ def update(request):
     }
     return render(request, 'accounts/update.html', context)
 
+
+# 회원 탈퇴
 @login_required
 def delete(request):
     request.user.delete()
     auth_logout(request)
     return redirect('posts:index')
 
+
+# 비밀번호 변경
 @login_required
 def change_password(request):
     if request.method == 'POST':
@@ -81,3 +92,10 @@ def change_password(request):
         'form': form,
     }
     return render(request, 'accounts/change_password.html', context)
+
+
+# 프로필
+@login_required
+def profile(request):
+    return render(request, 'accounts/profile.html')
+

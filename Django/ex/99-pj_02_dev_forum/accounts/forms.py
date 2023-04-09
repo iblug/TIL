@@ -98,7 +98,7 @@ class CustomUserCreationForm(UserCreationForm):
         ),
     )
 
-    birtyday = forms.DateField(
+    birthday = forms.DateField(
         label='생년월일',
         widget=forms.DateInput(
             attrs={
@@ -130,7 +130,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
-        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'birthday')
 
 
 class CustomUserChangeForm(UserChangeForm):
@@ -165,7 +165,7 @@ class CustomUserChangeForm(UserChangeForm):
         ),
     )
 
-    birtyday = forms.DateField(
+    birthday = forms.DateField(
         label='생년월일',
         widget=forms.DateInput(
             attrs={
@@ -178,7 +178,7 @@ class CustomUserChangeForm(UserChangeForm):
     
     class Meta(UserChangeForm.Meta):
         model = get_user_model()
-        fields = ('email', 'first_name', 'last_name')
+        fields = ('email', 'first_name', 'last_name', 'birthday')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

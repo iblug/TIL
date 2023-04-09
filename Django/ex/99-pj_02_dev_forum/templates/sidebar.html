@@ -1,14 +1,49 @@
-<div class="sidebar bg-body-tertiary px-3">
+<div class="sidebar bg-body-secondary ps-3">
   <div class="text-center">
     <span class="fs-3"><a href="{% url 'posts:index' %}">IT 정보 공유</a></span>
     <hr>
   </div>
   
   <ul id='sidebar'>
-    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:create' %}">글 작성</a></li>
-    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:index' %}">모든 글</a></li>
-    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:category' '개발' %}">개발</a></li>
-    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:category' 'CS' %}">CS</a></li>
-    <li onclick="activateLink(this)" class="mb-3"><a href="{% url 'posts:category' '신기술' %}">신기술</a></li>
+    <li class="mb-3 fs-5 ps-3 py-2 rounded-start-pill">
+      <a href="{% url 'posts:create' %}">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-plus-square"></i>
+          <span>글 작성</span>
+        </div>
+      </a>
+    </li>
+    <li class="mb-3 fs-5 ps-3 py-2 rounded-start-pill">
+      <a href="{% url 'posts:index' %}">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-file-earmark"></i>
+          <span>모든 글</span>
+        </div>
+      </a>
+    </li>
+    <li class="mb-3 fs-5 ps-3 py-2 rounded-start-pill">
+      <a href="{% url 'posts:category' '개발' %}">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-code-slash"></i>
+          <span>개발</span>
+        </div>
+      </a>
+    </li>
+    <li class="mb-3 fs-5 ps-3 py-2 rounded-start-pill">
+      <a href="{% url 'posts:category' 'CS' %}">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-motherboard"></i>
+          <span>CS</span>
+        </div>
+      </a>
+    </li>
+    <li class="mb-3 fs-5 ps-3 py-2 rounded-start-pill">
+      <a href="{% url 'posts:category' '신기술' %}">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-lightbulb"></i>
+          <span>신기술</span>
+        </div>
+      </a>
+    </li>
   </ul>
 </div>
