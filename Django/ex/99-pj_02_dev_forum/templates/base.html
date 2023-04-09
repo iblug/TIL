@@ -6,27 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
   <style>
     {% block style %}
     {% endblock style %}
-
+    
+    body {
+      font-family: 'NanumSquareAcb';
+    }
+    
     a {
       text-decoration: none;
       color: black;
     }
+    
 
     .index {
-      padding-left: 38rem;
-      padding-right: 23rem;
+      padding-left: 30rem;
+      padding-right: 15rem;
       padding-top: 5rem;
     }
+
+    @media (max-width: 1750px) {
+      .index {
+        padding-left: 20rem;
+        padding-right: 5rem;
+        padding-top: 5rem;
+      }
+    }
+
 
     .sidebar {
       padding-top: 5rem;
       width: 15rem;
       position: fixed;
       z-index: 50;
-      border-right-width: 1px;
       height: 100vh;
     }
 
@@ -46,18 +61,32 @@
     {% block content %}
     {% endblock content %}
   </div>
-  
 
   <script>
-    const activeLink = (event, link) => {
-      event.preventDefault();
-      const links = document.querySelectorAll("#sidebar li")
-      links.forEach((link) => {
-        link.classList.remove("bg-primary")
-      })
-      link.classList.add("bg-primary")
+    // sidebar 캡슐
+    const links = document.querySelectorAll("#sidebar li")    
+    links.forEach((link) => {
+      const liText = link.querySelector('#sidebar span')
+      if (liText.textContent === '{{ subject }}') {
+        link.classList.add("bg-white")
+      }
+    })
+
+    // 시계
+    const clock = document.getElementById("clock");
+    const getClock = () => {
+      const date = new Date()
+      const hours = String(date.getHours()).padStart(2, "0")
+      const minutes = String(date.getMinutes()).padStart(2, "0")
+      const seconds = String(date.getSeconds()).padStart(2, "0")
+      clock.innerText = `${hours}:${minutes}:${seconds}`
     }
+
+    getClock()
+    setInterval(getClock, 1000);
+
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

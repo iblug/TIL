@@ -36,6 +36,16 @@ class PostForm(forms.ModelForm):
             choices=CATEGORY_CHOICES
         ),
     )
+    notice = forms.BooleanField(
+        label='공지글',
+        widget=forms.CheckboxInput(
+            attrs={
+                'type': 'checkbox',
+                'class': 'form-check-input',
+                'placeholder': '공지글',
+            }
+        )
+    )
     class Meta:
         model = Post
-        fields = ('title', 'content', 'category')
+        fields = ('notice', 'title', 'content', 'category')

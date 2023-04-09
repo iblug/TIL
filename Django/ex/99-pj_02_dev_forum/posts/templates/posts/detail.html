@@ -9,13 +9,18 @@
       <a class="btn btn-secondary btn-sm" href="{% url 'posts:update' post.pk %}">수정</a>
       <a class="btn btn-secondary btn-sm" href="{% url 'posts:delete' post.pk %}">삭제</a>
     </div>
-    <div class="border rounded-3 p-3">
-      <div class="mb-3">
+    <div class="border rounded-3 p-3 mb-1">
+      <div class="mb-3 d-flex align-items-center gap-2">
+        {% if post.notice %}
+        <div><a class="rounded-3 border border-danger p-1 text-danger bg-danger-subtle" href="{% url 'posts:category' post.category %}">공지</a></div>
+        {% else %}
+        {% endif %}
         <a href="{% url 'posts:category' post.category %}" class="text-success fw-bold">{{ post.category }}</a>
       </div>
       <h2>{{ post.title }}</h2>
       <hr>
       {{ post.content|linebreaksbr }}
     </div>
+      <a class="btn btn-secondary btn-sm" href="{% url 'posts:index' %}">목록</a>
   </div>
 {% endblock content %}

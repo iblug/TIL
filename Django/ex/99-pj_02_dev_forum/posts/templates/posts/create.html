@@ -8,14 +8,23 @@
 <form action="{% url 'posts:create' %}" method="POST">
   {% csrf_token %}
   {% for field in form %}
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+  {% if field.name == 'notice' %}
+  <div class="ms-1">
+    <label class="form-check-label me-2 mb-2">
+      공지글
+    </label>
     {{ field }}
   </div>
+  {% else %}
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+      {{ field }}
+    </div>
+    {% endif %}
   {% endfor %}
   <div class="text-end">
-    <input class="btn btn-primary" type="submit" value="생성">
+    <a class="btn btn-secondary btn" href="{% url 'posts:index' %}">목록</a>
+    <input class="btn btn-success" type="submit" value="생성">
   </div>
 </form>
 {% endblock content %}
-
