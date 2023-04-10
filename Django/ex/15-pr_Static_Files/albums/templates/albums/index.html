@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="margin-top: 5rem;">
+  <!-- album -->
+  <div class="row">
+    {% for album in albums %}
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
+          {% if album.image %}
+            <img src="{{ album.image.url }}" class="card-img-top" alt="{{ album.content }}">
+          {% else %}
+            <img src="{% static 'no-image.png' %}" alt="no-img">
+          {% endif %}
+          <div class="card-body">
+            <p class="card-text">{{ album.content }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
