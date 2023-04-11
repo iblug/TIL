@@ -220,3 +220,18 @@ image = models.ImageField(blank=True, upload_to=articles_image_path)
 ## imageresizing
 * django-imagekit 패키지를 활용하여 사용자가 업로드한 이미지 리사이즈
   * [django-imagekit](https://django-imagekit.readthedocs.io/en/latest/)
+
+## django-cleanup
+* 이미지파일 자동 삭제
+  * https://github.com/un1t/django-cleanup
+  ```console
+  $ pip install django-cleanup
+  ```
+  ```python
+  # crud/settings.py
+
+  INSTALLED_APPS = [
+    ...,
+    'django_cleanup.apps.CleanupConfig',
+  ]
+  ```
