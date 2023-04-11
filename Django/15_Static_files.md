@@ -64,7 +64,7 @@ STATIC_URL = '/static/'
 # settings.py
 
 STATICFILES_DIRS = [
-  DASE_DIR / 'static'
+  BASE_DIR / 'static'
 ]
 ```
 * 정적 파일의 기본 경로 외에 추가적인 경로 목록을 정의하는 리스트
@@ -217,7 +217,7 @@ image = models.ImageField(blank=True, upload_to=articles_image_path)
 * ModelForm 상위 클래스의 생성자 함수 참고(BaseModelForm)
   * https://github.com/django/django/blob/main/django/forms/models.py#L333
 
-## imageresizing
+## image-resizing
 * django-imagekit 패키지를 활용하여 사용자가 업로드한 이미지 리사이즈
   * [django-imagekit](https://django-imagekit.readthedocs.io/en/latest/)
 
