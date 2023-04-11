@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>index</h1>
+{% for review in reviews %}
+  <p>
+    <a href="{% url 'reviews:detail' review.pk %}">
+      {{ review.title }} [{{ review.comment_set.count }}]
+    </a>
+  </p>
+{% endfor %}
+<hr>
+<a href="{% url 'reviews:create' %}">[CREATE]</a>
+{% endblock content %}
