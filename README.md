@@ -49,6 +49,18 @@
 * [Template](Django/03_Template.md)
 * [URLs](Django/04_URLs.md)
 * [Model](Django/05_Django_Model.md)
+* [ORM 1](Django/06_ORM.md)
+* [ORM 2](Django/07_ORM_2.md)
+* [ORM with view 1](Django/08_ORM_with_view.md)
+* [ORM with view 2](Django/09_ORM_with_view.md)
+* [Form](Django/10_Form.md)
+* [Handling HTTP requests](Django/11_Handling_HTTP_requests.md)
+* [Cookie and Session](Django/12_Cookie_and_Session.md)
+* [Authentication System 1](Django/13_Authentication_System.md)
+* [Authentication System 2](Django/14_Authentication_System.md)
+* [Static files](Django/15_Static_files.md)
+* [Many to one relationships 1](Django/16_Many_to_one_relationships_1.md)
+* [Many to one relationships 2](Django/17_Many_to_one_relationships_2.md)
 
 
 ## [git](/git/)
