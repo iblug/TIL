@@ -28,6 +28,8 @@
 ```py
 # articles/forms.py
 
+from django import forms
+
 class ArticleForm(forms.Form):
   title = forms.CharField(max_length=10)
   content = forms.CharField()
@@ -57,6 +59,7 @@ def new(request):
 ...
 ```
 * Form rendering options
+  * https://docs.djangoproject.com/en/3.2/topics/forms/#form-rendering-options
   * `{{ form.as_p }}`
     * 요소마다 p tag를 붙여줌
 
