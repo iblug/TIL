@@ -1,24 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <h1>index</h1>
 {% if request.user.is_authenticated %}
-<h3>{{ request.user }}님, 안녕하세요!</h3>
-<form action="{% url 'accounts:logout' %}" method="POST">
-  {% csrf_token %}
-  <input type="submit" value="Logout">
-</form>
-<br>
 <a href="{% url 'reviews:create' %}">Create</a>
-{% else %}
-<a href="{% url 'accounts:login' %}">Login</a>
-<a href="{% url 'accounts:signup' %}">Signup</a>
 {% endif %}
 <hr>
-{% for review in reviews %}
-<p>후기 번호 - {{ review.pk }}</p>
-<p>영화이름 - {{ review.movie }}</p>
-<a href="{% url 'reviews:detail' review.pk %}">[Detail]</a>
-<hr>
-{% endfor %}
+
+<!-- 리뷰 목록 -->
+{% include 'review_list.html' %}
+
 {% endblock content %}
