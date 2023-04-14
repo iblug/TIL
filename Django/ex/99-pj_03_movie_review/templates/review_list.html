@@ -1,0 +1,18 @@
+{% load static %}
+{% for review in reviews %}
+<div class="d-flex align-items-center my-4">
+  {% if review.image_thumbnail %}
+    <img src="{{ review.image_thumbnail.url }}" alt="img">
+  {% else %}
+    <img src="{% static 'no-image.png' %}" alt="no-img" width="100px;">
+  {% endif %}
+  <div class="ms-3">
+    <p>후기 번호 - {{ review.pk }}</p>
+    <p>영화이름 - {{ review.movie }}</p>
+    <a href="{% url 'reviews:detail' review.pk %}">[Detail]</a>
+  </div>
+</div>
+{% empty %}
+<p class="text-center text-secondary">아직 작성한 후기가 없습니다</p>
+{% endfor %}
+<hr>

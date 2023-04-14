@@ -2,9 +2,14 @@
 
 {% block content %}
 <h1>Update</h1>
-<form action="{% url 'reviews:update' review.pk %}" method='POST'>
+<form action="{% url 'reviews:update' review.pk %}" method='POST' enctype="multipart/form-data">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% for field in form %}
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+      {{ field }}
+    </div>
+  {% endfor %}
   <input type="submit" value="UPDATE">
 </form>
 <a href="{% url 'reviews:detail' review.pk %}">[Back]</a>

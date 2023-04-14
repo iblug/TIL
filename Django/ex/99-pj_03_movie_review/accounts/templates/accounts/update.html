@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mb-3">Update</h1>
+  <form action="{% url 'accounts:profile_update' user.pk %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" class="btn btn-primary mb-4">
+  </form>
+  <hr>
+  <h3 class="mt-5">계정 탈퇴</h3>
+  <p class="text-secondary">해당 계정을 탈퇴하려면 아래 버튼을 눌러 주세요</p>
+  <form action="{% url 'accounts:delete' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger mb-4">계정 탈퇴</button>
+  </form>
+  <hr>
+  <a href="{% url 'accounts:profile' user.pk %}">[Back]</a>
+</div>
+{% endblock content %}

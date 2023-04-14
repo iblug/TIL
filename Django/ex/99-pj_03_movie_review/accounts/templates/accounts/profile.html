@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block style %}
+<style>
+  .img-wrapper {
+    position: relative;
+    width: 150px;
+    padding-bottom: 100%;
+  }
+  
+  .img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50, 50);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+  }
+</style>
+{% endblock style %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+  <h1 class="mb-3">Profile</h1>
+  <div class="card mb-3 p-2">
+    <div class="d-flex align-items-center gap-2">
+      <div>
+        {% if user.profile_img %}
+        <div class="img-wrapper">
+          <img src="{{ user.profile_img.url }}" alt="{{ user.profile_img }}" class="rounded">
+        </div>
+        {% else %}
+        <div class="img-wrapper">
+          <img src="{% static 'default-profile.png' %}" alt="default-profile">
+        </div>
+        {% endif %}
+      </div>
+      <div class="flex-grow-1">
+        <div class="card-body">
+          <p class="card-text m-0"><small class="text-body-secondary">이름</small></p>
+          <p class="card-text">{{ user }}</p>
+          <p class="card-text m-0"><small class="text-body-secondary">이메일</small></p>
+          <p class="card-text">{{ user.email }}</p>
+          <div class="d-flex gap-2">
+            <a href="{% url 'accounts:profile_update' user.pk %}" class="btn btn-sm btn-outline-primary">정보 수정</a>
+            <a href="{% url 'accounts:change_password' %}" class="btn btn-sm btn-primary">비밀번호 변경</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="mb-3">리뷰목록</h3>
+
+  <!-- 리뷰 목록 -->
+  {% include 'review_list.html' %}
+  
+  <a href="{% url 'reviews:index' %}">[Index]</a>
+</div>
+{% endblock content %}
