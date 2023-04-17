@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block style %}
+  <style>
+    button {
+      margin: 0.2em;
+    }
+  </style>
+{% endblock style %}
+{% block content %}
+  <div>
+    <h3>DETAIL</h3>
+    <p>게시글 작성자 -
+      {{article.user}}</p>
+    <p>
+      게시글 번호 -
+      {{article.pk}}
+    </p>
+    <p>
+      게시글 제목 -
+      {{article.title}}
+    </p>
+    <p>
+      게시글 내용 -
+      {{article.content}}
+    </p>
+    <!-- like -->
+    <form action="{% url 'articles:likes' article.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user in article.like_users.all %}
+        <button type="submit" class="btn btn-danger"><i class="bi bi-heart-fill"> 좋아요 - {{ article.like_users.count }}</i></button>
+      {% elif request.user.is_authenticated %}
+        <button type="submit" class="btn btn-outline-danger"><i class="bi bi-heart"> 좋아요 - {{ article.like_users.count }}</i></button>
+      {% else %}
+        <button type="submit" class="btn text-outline-danger" disabled ><i class="bi bi-heart"> 좋아요 - {{ article.like_users.count }}</i></button>
+      {% endif %}
+    </form>
+    
+    <!-- emotion -->
+    {% for emotion in emotions %}
+      <div>
+        {% if request.user.is_authenticated %}
+        {{emotion.queryset}}
+          <form action="{% url 'articles:emotes' article.pk emotion.value %}" method="POST">
+            {% csrf_token %}
+            {% if emotion.exist %}
+              <button type="submit" class="btn btn-{{emotion.color}}"><i class="bi bi-{{emotion.icon}}-fill"> {{emotion.label}} - {{ emotion.count }}</i></button>
+            {% else %}
+              <button type="submit" class="btn btn-outline-{{emotion.color}}"><i class="bi bi-{{emotion.icon}}"> {{emotion.label}} - {{ emotion.count }}</i></button>
+            {% endif %}
+          </form>
+        {% else %}
+          <button type="submit" class="btn btn-outline-{{emotion.color}}"><i class="bi bi-{{emotion.icon}}"> {{emotion.label}} - {{ emotion.count }}</i></button>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <a href="{% url 'articles:index' %}">[back]</a>
+  </div>
+  <hr>
+  <form action="{% url 'articles:comment_create' article.pk %}" method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <input type="submit" value="댓글 작성">
+  </form>
+  <hr>
+  {% for comment in comments %}
+    <div>
+      <p>댓글 작성자 -
+        {{comment.user}}</p>
+      <p>댓글 번호 -
+        {{ comment.pk }}</p>
+      <p>
+        댓글 내용 -
+        {{comment.content}}
+      </p>
+      <!-- like -->
+      <form action="{% url 'articles:like_comment' article.pk comment.pk %}" method="POST">
+        {% csrf_token %}
+        {% if request.user in comment.like_users.all %}
+          <button type="submit" class="btn text-danger"><i class="bi bi-heart-fill"></i></button>
+        {% elif request.user.is_authenticated %}
+          <button type="submit" class="btn text-danger"><i class="bi bi-heart"></i></button>
+        {% else %}
+          <button type="submit" class="btn text-danger" disabled ><i class="bi bi-heart"></i></button>
+        {% endif %}
+      </form>
+      <p>댓글 좋아요 수 - {{ comment.like_users.count }} 개</p>
+
+      <!-- delete -->
+      {% if comment.user == user %}
+        <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="댓글 삭제">
+        </form>
+      {% endif %}
+    </div>
+    <hr>
+  {% endfor %}
+{% endblock content %}
