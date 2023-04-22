@@ -131,3 +131,8 @@ def follow(request, user_pk):
 </div>
 ```
 * 팔로우 버튼 클릭 후 팔로우 버튼 변화 및 중개 테이블 데이터 확인
+
+# 99. 참고
+## Pagination
+* [Pagination](https://docs.djangoproject.com/en/4.2/topics/pagination/)
+* 실습
