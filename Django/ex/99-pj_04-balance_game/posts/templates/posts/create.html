@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-5 container d-flex justify-content-center" style="width:70%">
+    <form action="{% url 'posts:create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="d-flex justify-content-center btn btn-success" type="submit" value="주제 작성">
+    </form>
+</div>
+{% endblock content %}

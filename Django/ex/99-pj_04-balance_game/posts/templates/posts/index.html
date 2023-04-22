@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+{% endblock style %}
+
+{% block content %}
+
+  <div class="mb-5 container">
+    <div class="row d-flex justify-content-evenly">
+      <div class="d-flex align-items-center justify-content-end">
+        <form action="{% url 'posts:index' %}" method="GET">
+         <button class="btn btn-success mt-3 pt-2" type="submit" name="order" value="voter">참여순</button>
+         <button class="btn btn-success mt-3 pt-2" type="submit" name="order" value="likes">좋아요순</button>
+         <button class="btn btn-success mt-3 pt-2" type="submit" name="order" value="newest">최신순</button>
+       </form>
+     </div>
+     <div class="d-flex align-items-center justify-content-end">
+       <form action="{% url 'posts:index' %}" method="GET">
+         <button class="btn btn-outline-success mt-3 pt-2" type="submit" name="date_filter" value="">전체</button>
+         <button class="btn btn-outline-success mt-3 pt-2" type="submit" name="date_filter" value="30">월</button>
+         <button class="btn btn-outline-success mt-3 pt-2" type="submit" name="date_filter" value="7">주</button>
+         <button class="btn btn-outline-success mt-3 pt-2" type="submit" name="date_filter" value="1">일</button>
+       </form>
+     </div>   
+    </div>
+    <button class="mt-3 btn btn-success me-1 pt-2 d-flex justify-content-start">
+      <a href="{% url 'posts:create' %}" style="color:white; text-decoration-line:none;">주제 작성</a>
+    </button>
+ </div>
+
+ {% comment %} 카드 {% endcomment %}
+ <div class="mb-5 container">
+    <div class="row g-4">
+      {% for post in posts %}
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+              {% if post.select1_image %}
+                <img src="{{ post.select1_image.url }}" class="card-img-top" width="200px" height="200px">
+              {% else %}
+                <img src="{% static 'no-image.png' %}" alt="no-img" width="200px" height="200px">
+              {% endif %}
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'posts:detail' post.pk %}" style="color:#006400; text-decoration-line:none;">{{ post.title }}</a></h5>
+              <p class="card-text">
+                <div class="d-flex justify-content-center">
+                  {{ post.select1_content }}
+                </div>
+                <div class="d-flex justify-content-center">
+                  VS
+                </div>
+                <div class="d-flex justify-content-center">
+                  {{ post.select2_content }}
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

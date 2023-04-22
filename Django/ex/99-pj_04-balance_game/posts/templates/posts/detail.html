@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+{% endblock style %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <p class="mt-4" style="color:#006400; font-size:x-large">{{ post.title }}</p>
+    </div>
+    <div class="row">
+      <p class="d-flex justify-content-end">
+        <a style="color:#006400; text-decoration-line:none; font-size:large" href="{% url 'accounts:profile' post.user %}">
+          {{ post.user }}</a> 님이 작성</p>
+      <p id="post-like-count" class="d-flex justify-content-end">
+        좋아요: {{ post.like_users.count }}
+      </p>
+    </div>
+    <div class="row mt-5 d-flex justify-content-center">
+      <div class="col-3 d-flex flex-column justify-content-center" style="align-items-stretch">
+        <p class="d-flex justify-content-center" style="font-size:large">{{ post.select1_content }}</p>
+          <div class="mt-3 d-flex justify-content-center">
+            {% if post.select1_image %}
+              <img class="mt-3 d-flex justify-content-center" src="{{ post.select1_image.url }}" alt="" width='200px' height='200px'>
+            {% else %}
+              <img class="mt-3 d-flex justify-content-center" src="{% static 'no-image.png' %}" alt="no-img" width="200px" height="200px">
+            {% endif %}
+          </div>
+          <form class="mt-5 d-flex justify-content-center" action="{% url 'posts:select' post_pk=post.pk answer=post.select1_content %}">
+            {% csrf_token %}
+            {% if request.user in post.select1_user.all or request.user in post.select2_user.all %}
+              <button class="btn btn-outline-success disabled" type="submit">선택</button>
+            {% else %}
+              <button class="btn btn-outline-success" type="submit">선택</button>
+            {% endif %}
+          </form>
+          <p class="mt-3 d-flex justify-content-center">{{ select1_user_count }}</p>
+        </div>
+        
+        <div class='col-6' style="width:300px; height:300px;">
+          {% if request.user in post.select1_user.all or request.user in post.select2_user.all %}
+            <canvas id="myChart"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                  labels: ['{{ post.select1_content }}', '{{ post.select2_content }}'],
+                  datasets: [{
+                    label: 'Vote Results',
+                    data: [{{ post.select1_user.count }}, {{ post.select2_user.count }}],
+                    backgroundColor: [
+                      'rgba(190,245,190,1)',
+                      'rgba(160,223,225,1)',
+                    ],
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false
+                }
+              });
+            </script>
+          {% else %}
+          
+          {% endif %}
+          
+        </div>
+
+        <div class="col-3 d-flex flex-column justify-content-center" style="align-items-stretch">
+          <p class="d-flex justify-content-center" style="font-size:large">{{ post.select2_content }}</p>
+          <div class="mt-3 d-flex justify-content-center">
+            {% if post.select2_image %}
+              <img class="mt-3 d-flex justify-content-center" src="{{ post.select2_image.url }}" alt="" width='200px' height='200px'>
+            {% else %}
+              <img class="mt-3 d-flex justify-content-center" src="{% static 'no-image.png' %}" alt="no-img" width="200px" height="200px">
+            {% endif %}
+          </div>
+          <form class="mt-5 d-flex justify-content-center" action="{% url 'posts:select' post_pk=post.pk answer=post.select2_content %}">
+            {% csrf_token %}
+            {% if request.user in post.select1_user.all or request.user in post.select2_user.all %}
+              <button class="btn btn-outline-success disabled" type="submit">선택</button>
+            {% else %}
+              <button class="btn btn-outline-success" type="submit">선택</button>
+            {% endif %}
+          </form>
+          <p class="mt-3 d-flex justify-content-center">{{ select2_user_count }}</p>
+      </div>
+    </div>
+
+
+    {# 게시글 좋아요 #}
+    <div class="d-flex justify-content-end">
+      <form class="mt-5" id="like-forms" data-post-id="{{ post.pk }}">
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+          {% if request.user in post.like_users.all %}
+            <input class="btn btn-outline-success" type="submit" value="좋아요 취소" id="like--{{ post.pk }}">
+          {% else %}
+            <input class="btn btn-outline-success" type="submit" value="좋아요 {{ post.like_users.count }}" id="like--{{ post.pk }}">
+          {% endif %}
+        {% else %}
+          <input class="btn btn-outline-success" type="submit" value="좋아요 {{ post.like_users.count }}" disabled>
+        {% endif %}
+    </div>
+    </form>
+
+    {# 댓글 #}
+    <form class="ms-4 d-flex justify-content-start text-center align-self-center" action="{% url 'posts:comment_create' post.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form.as_p }}
+      <div class="ms-3 d-flex justify-content-center align-self-center">
+        <input class="btn btn-success" type="submit" value="댓글 작성">
+      </div>
+    </form>
+    <hr>
+    <div class="mb-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <form action="{% url 'posts:detail' post.pk %}" method="GET">
+            <button class="btn btn-success" type="submit" name="order" value="likes">좋아요순</button>
+            <button class="btn btn-success" type="submit" name="order" value="newest">최신순</button>
+            <button class="btn btn-success" type="submit" name="order" value="old">오랜순</button>
+          </form>
+        </div>
+        <div class="" style="color:#198754;">
+        {% comment %} <div class="me-4 mb-4 d-flex justify-content-end" style="color:#198754;"> {% endcomment %}
+          댓글 수 : ({{ comments | length }})
+        </div>
+      </div>
+      <div class="mt-3 d-flex justify-content-start">
+        <ul>
+          <div>
+            {% for comment in comments %}
+            <div class="d-flex justify-content-start">
+              <li class="mb-2 d-flex justify-content-start text-center align-self-center">
+                <p class="mt-3 d-flex justify-content-start text-center align-self-center">
+                  <div class="ms-3 d-flex justify-content-center text-center align-self-center">
+                    <a href="{% url 'accounts:profile' comment.user %}" style="color:#006400; text-decoration-line:none;">{{ comment.user }}</a>
+                  </div>
+                  <div class="ms-3 d-flex justify-content-center text-center align-self-center">
+                    {{ comment.content }}
+                  </div>
+                  <div class="ms-3 d-flex justify-content-end text-center align-self-center">
+                    👍 {{ comment.like_users.count }}
+                  </div>
+                </p>
+                <div class="ms-5 d-flex justify-content-start text-center align-self-center">
+                  <form action="{% url 'posts:comment_like' post_pk=post.pk comment_pk=comment.pk %}" method="POST">
+                    {% csrf_token %}
+                    {% if request.user in comment.like_users.all %}
+                    <div class="ms-3 d-flex justify-content-center align-self-center">
+                        <input class="btn btn-outline-success"type="submit" value='좋아요 취소'>
+                    </div>
+                    {% else %}
+                    <div class="ms-3 d-flex justify-content-center align-self-center">
+                        <input class="btn btn-outline-success" type="submit" value='좋아요'>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </li>
+            </div>
+            {% endfor %}
+          </div>
+        </ul>
+      </div>
+    </div>
+</div>
+
+{% comment %} 게시글 좋아요 {% endcomment %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const form = document.querySelector('#like-forms')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    console.log('test0')
+    
+    form.addEventListener('submit', function (event) {
+      console.log('test1')
+      event.preventDefault()
+      const postId = event.target.dataset.postId
+      axios({
+        method: "POST",
+        url: `/posts/${postId}/likes/`,
+        headers: {'X-CSRFToken': csrftoken},
+      })
+        .then((response) => {
+          const isLiked = response.data.is_liked
+          const likeBtn = document.querySelector(`#like--${postId}`)
+          if (isLiked === true) {
+            likeBtn.value = '좋아요 취소'
+          } else {
+            likeBtn.value = '좋아요'
+          }
+          // 좋아요 수 태그 
+          const postLikeCountTag = document.querySelector('#post-like-count')
+          // view 응답 json
+          const postLikeCountData = response.data.post_like_count
+
+          postLikeCountTag.textContent = postLikeCountData
+        })
+        .catch((error) => {
+          console.log(error.response)
+        })
+    })
+  </script>
+
+{% endblock content %}
