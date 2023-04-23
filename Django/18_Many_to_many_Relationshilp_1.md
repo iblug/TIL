@@ -383,3 +383,94 @@ def likes(request, article_pk):
         article.like_users.add(request.user)
     return redirect('articles:index')
 ```
+
+## Emote
+### URL
+```python
+# articles/urls.py
+
+    path('<int:article_pk>/emotes/<int:emotion>/', views.emotes, name='emotes'),
+```
+
+### View
+```python
+# articles/views.py
+
+# emote 목록
+EMOTIONS = [
+    {'label': '재밌어요', 'value': 1},
+    {'label': '싫어요', 'value': 2},
+    {'label': '화나요', 'value': 3},
+]
+
+
+def detail(request, article_pk):
+    article = Article.objects.get(pk=article_pk)
+
+    # emote 데이터 준비(dictionary 형태로)
+    emotions = []
+    for emotion in EMOTIONS:
+        label = emotion['label']
+        value = emotion['value']
+        count = Emote.objects.filter(article=article, emotion=value).count()
+        exist = Emote.objects.filter(article=article, emotion=value, user=request.user)
+        emotions.append(
+            {
+                'label': label,
+                'value': value,
+                'count': count,
+                'exist': exist,
+            }
+        )
+
+    comments = article.comment_set.all()
+    comment_form = CommentForm()
+    context = {
+        'emotions': emotions,
+        'article': article,
+        'comments': comments,
+        'comment_form': comment_form,
+    }
+    return render(request, 'articles/detail.html', context)
+
+
+# emote 처리
+@login_required
+def emotes(request, article_pk, emotion):
+    article = Article.objects.get(pk=article_pk)
+    filter_query = Emote.objects.filter(
+        article=article,
+        user=request.user,
+        emotion=emotion,
+    )
+    if filter_query.exists():
+        filter_query.delete()
+    else:
+        Emote.objects.create(article=article, user=request.user, emotion=emotion)
+
+    return redirect('articles:detail', article_pk)
+```
+
+### Template
+```django
+{% for emotion in emotions %}
+<div>
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'articles:emotes' article.pk emotion.value %}" method="POST">
+      {% csrf_token %}
+      {% if emotion.exist %}
+        <input type="submit" value="{{emotion.label}} 취소">
+      {% else %}
+        <input type="submit" value="{{emotion.label}}">
+      {% endif %}
+    </form>
+  {% else %}
+    <button disabled="disabled">{{emotion.label}}</button>
+  {% endif %}
+  <p>
+    게시글 {{emotion.label}} 수 -
+    {{ emotion.count }}
+  </p>
+</div>
+{% endfor %}
+```
