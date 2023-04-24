@@ -66,11 +66,11 @@
 * '소프트웨어 아키텍쳐 디자인 제약 모음'
   * (a group of software architecture design constraints)
 * REST 원리를 따르는 시스템을 RESTful 하다고 부름
-* <u>**"자원을 정의"**</u>하고 <u>**"저원에 대한 주소를 지정"**</u>하는 전반적인 방법을 서술
+* <u>**"자원을 정의"**</u>하고 <u>**"자원에 대한 주소를 지정"**</u>하는 전반적인 방법을 서술
 
 ### REST에서 자원을 정의하고 주소를 지정하는 방법
 1. 자원의 식별
-  * URL
+  * URI
 2. 자원의 행위
   * HTTP Methods
 3. 자원의 표현
@@ -182,10 +182,10 @@ class ArticleListSerializer(serializers.ModelSerializer):
     1. Model 정보에 맞춰 자동으로 필드 생성
     2. serializer에 대한 유효성 검사기를 자동으로 생성
     3. .create 및 .update()의 기본 구현 메서드가 포함됨
-## URL과 HTTP 
+## URL과 HTTP request methods 설계
 | | GET | POST | PUT | DELETE |
 |:-:|:-:|:-:|:-:|:-:|
-| articles/ | 전체 글 조회 | 글 작성 | 전체 글 수정 | 전체 글 삭제 |
+| articles/ | 전체 글 조회 | 글 작성 | . | . |
 | articles/1/ | 1번 글 조회 | . | 1번 글 수정 | 1번 글 삭제 |
 
 ## 5-1. GET - List
@@ -301,7 +301,7 @@ def article_list(request):
 
 ## 5-4. DELETE
 * 게시글 데이터 삭제하기
-* 요청에 대한 데이터 삭제가 성공했을 경우는 204 No Content 상태 코드 응답
+* 요청에 대한 데이터 삭제가 성공했을 경우는 `204 No Content` 상태 코드 응답
 ```python
 @api_view(['GET', 'DELETE'])        ##
 def article_detail(request, article_pk):
@@ -320,7 +320,7 @@ def article_detail(request, article_pk):
 
 ## 5-5. PUT
 * 게시글 데이터 수정하기
-* 요청에 대한 데이터 수정이 성공했을 경우는 200 OK 상태코드 응답
+* 요청에 대한 데이터 수정이 성공했을 경우는 `200 OK` 상태코드 응답
 ```python
 # articles/views.py
 
